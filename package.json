@@ -1,0 +1,28 @@
+{
+  "name": "art-of-jay-joson",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Art Of Jay Joson",
+  "author": "John Beresford",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^2.26.1",
+    "gatsby-image": "^2.9.0",
+    "gatsby-plugin-sharp": "^2.12.0",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-source-filesystem": "^2.9.0",
+    "gatsby-transformer-sharp": "^2.10.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "typescript": "^4.1.3"
+  }
+}

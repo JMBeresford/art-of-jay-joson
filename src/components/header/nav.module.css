@@ -1,0 +1,11 @@
+.nav {
+  font-family: "Chantal", sans-serif;
+  font-weight: 300;
+  font-size: 1.3rem;
+
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 2;
+  max-width: 45vw;
+  color: var(--text-dark);
+}

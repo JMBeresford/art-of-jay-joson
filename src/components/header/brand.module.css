@@ -1,0 +1,16 @@
+.brand {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.imgWrapper {
+  min-width: 60px;
+  margin-right: 1.5rem;
+}
+
+.brandText {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
