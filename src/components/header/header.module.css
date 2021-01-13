@@ -1,8 +1,9 @@
 .header {
   display: flex;
+  position: relative;
   height: 13vh;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5vh 3vw;
+  padding: 0 8%;
   background: linear-gradient(#d6d6e6, transparent);
 }

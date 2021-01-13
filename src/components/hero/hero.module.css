@@ -1,0 +1,91 @@
+.hero {
+  display: flex;
+  height: 87vh;
+  width: 100vw;
+  overflow-x: hidden;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 12%;
+}
+
+.textWrapper {
+  width: 50%;
+}
+
+.heroText {
+  font-family: "Chantal", sans-serif;
+  font-weight: 500;
+  font-size: 5rem;
+  width: 100%;
+}
+
+.imgWrapper {
+  overflow: visible;
+  min-width: 40%;
+}
+
+.img {
+  margin: auto;
+}
+
+@media (max-width: 1200px) {
+  .heroText {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .heroText {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 1000px), (orientation: portrait) {
+  .hero {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .textWrapper {
+    width: 100%;
+    text-align: center;
+  }
+
+  .imgWrapper {
+    min-width: 60%;
+    padding-bottom: 10%;
+  }
+  
+  .heroText {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .imgWrapper {
+    min-width: 70%;
+  }
+}
+
+@media (max-width: 575px) {
+  .imgWrapper {
+    min-width: 80%;
+  }
+}
+
+@media (max-width: 400px) {
+  .imgWrapper {
+    min-width: 90%;
+  }
+
+  .heroText {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .heroText {
+    font-size: 2rem;
+  }
+}

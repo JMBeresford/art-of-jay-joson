@@ -9,3 +9,77 @@
   max-width: 45vw;
   color: var(--text-dark);
 }
+
+.navMobile {
+  font-family: "Chantal", sans-serif;
+  font-weight: 300;
+  font-size: 1.3rem;
+  color: var(--accent-light);
+
+  z-index: 50;
+  position: fixed;
+  top: 0;
+  left: 50vw;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(6.5vh - 29.5px) 8vw 10% 8vw;
+  width: 50vw;
+  height: 100vh;
+
+  background-color: transparent;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  clip-path: circle(29.5px at calc(84% - 29.5px) 6.5vh);
+
+  transition: all ease-in-out 0.6s;
+}
+
+.menuBtn {
+  height: 59px;
+  width: 59px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  align-self: flex-end;
+}
+
+.navLink {
+  font-size: 2rem;
+  padding-bottom: 2rem;
+}
+
+.open {
+  background-color: var(--dark);
+  color: var(--accent-light);
+  clip-path: circle(200vh at calc(92% - 29.5px) 29.5px);
+}
+
+.open .menuBtn {
+  filter: invert(100);
+  padding: 15px;
+}
+
+@media (max-width: 1200px) {
+  .nav {
+    display: none;
+  }
+
+  .navMobile {
+    display: flex;
+  }
+}
+
+@media (max-width: 700px) {
+  .navLink {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .navLink {
+    font-size: 1.25rem;
+  }
+}

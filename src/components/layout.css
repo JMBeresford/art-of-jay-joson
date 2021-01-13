@@ -1,11 +1,16 @@
 :root {
-  --text-dark: #3A3838;
+  --dark: #414554;
+  --accent-light: #E5E5EC;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
 }
 
 a {

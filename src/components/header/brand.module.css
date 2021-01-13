@@ -14,3 +14,15 @@
   font-weight: 700;
   font-size: 1.8rem;
 }
+
+@media (max-width: 500px) {
+  .imgWrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .brandText {
+    font-size: 1.5rem;
+  }
+}
