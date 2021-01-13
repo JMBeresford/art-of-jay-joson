@@ -10,10 +10,10 @@ const Nav = () => {
   return (
     <>
       <nav className={styles.nav}>
-        <Link to="/gallery">Gallery</Link>
-        <p href="#aboutMe">About Me</p>
-        <Link to="/contact">Contact Me</Link>
-        <p>Socials</p>
+        <Link className={styles.navLinkDesktop} to="/gallery">Gallery</Link>
+        <p className={styles.navLinkDesktop} href="#aboutMe">About Me</p>
+        <Link className={styles.navLinkDesktop} to="/contact">Contact Me</Link>
+        <p className={styles.navLinkDesktop}>Socials</p>
       </nav>
 
       <nav className={styles.navMobile + (open ? " " + styles.open: "")}>

@@ -7,12 +7,15 @@
 .imgWrapper {
   min-width: 60px;
   margin-right: 1.5rem;
+  cursor: pointer;
 }
 
 .brandText {
   font-family: "Nunito", sans-serif;
   font-weight: 700;
   font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--text-dark);
 }
 
 @media (max-width: 500px) {
@@ -24,5 +27,11 @@
 @media (max-width: 400px) {
   .brandText {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .brandText {
+    font-size: 1.25rem;
   }
 }

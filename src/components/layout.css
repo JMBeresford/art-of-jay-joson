@@ -1,5 +1,6 @@
 :root {
   --dark: #414554;
+  --text-dark: #3A3838;
   --accent-light: #E5E5EC;
 }
 
@@ -16,4 +17,84 @@ body {
 a {
   text-decoration: none;
   color: var(--text-dark);
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.circle {
+  background-color: var(--dark);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-top: 3px;
+  transform: none;
+}
+
+.circle:first-child {
+  opacity: 0;
+  
+  animation: top-move ease-in-out 1s infinite;
+}
+
+.circle:nth-child(2) {
+  opacity: 1;
+
+  animation: mid-move ease-in-out 1s infinite;
+}
+
+.circle:nth-child(3) {
+  opacity: 1;
+  
+  animation: bottom-move ease-in-out 1s infinite;
+}
+
+@keyframes top-move {
+  from {
+    transform: scale3d(0.5, 0.5, 0.5);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(13px);
+    opacity: 1;
+  }
+}
+
+@keyframes mid-move {
+  from {
+    transform: none;
+  }
+
+  to {
+    transform: translateY(13px);
+  }
+}
+
+@keyframes bottom-move {
+  from {
+    opacity: 1;
+
+    transform: none;
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(13px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }

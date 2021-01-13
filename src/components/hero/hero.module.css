@@ -15,6 +15,7 @@
 
 .heroText {
   font-family: "Chantal", sans-serif;
+  color: var(--text-dark);
   font-weight: 500;
   font-size: 5rem;
   width: 100%;
