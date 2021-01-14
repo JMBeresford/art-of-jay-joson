@@ -1,5 +1,5 @@
 :root {
-  --dark: #414554;
+  --dark: #272A33;
   --text-dark: #3A3838;
   --accent-light: #E5E5EC;
 }
@@ -12,6 +12,7 @@
 
 body {
   width: 100vw;
+  overflow-x: hidden;
 }
 
 a {

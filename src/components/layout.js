@@ -6,11 +6,6 @@ const Layout = ({children}) => {
 
   return (
     <div>
-      <div className="scrollIndicator">
-        <div className="circle"></div>
-        <div className="circle"></div>
-        <div className="circle"></div>
-      </div>
       {children}
     </div>
   )

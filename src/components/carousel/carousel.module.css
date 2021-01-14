@@ -1,0 +1,25 @@
+.carousel {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto repeat(2, 38%) auto;
+  grid-template-rows: auto 50% 20% auto;
+  grid-template-areas:
+    ". .      .      ."
+    ". avatar images ."
+    ". text   images ."
+    ". .      .      ."
+    ;
+}
+
+.avatar {
+  grid-area: avatar;
+}
+
+.avatarText {
+  font-family: "Chantal", sans-serif;
+  grid-area: text;
+  align-self: end;
+
+  font-size: 4rem;
+  color: var(--dark);
+}

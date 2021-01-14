@@ -8,7 +8,7 @@ const Hero = () => {
   {
     file(relativePath: {eq: "avatar1.png"}) {
       childImageSharp {
-        fluid {
+        fluid(quality: 100) {
           base64
           aspectRatio
           sizes
