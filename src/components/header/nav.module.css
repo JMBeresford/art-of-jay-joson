@@ -50,9 +50,11 @@
   font-size: 2rem;
   padding-bottom: 2rem;
   cursor: pointer;
+  color: var(--accent-light);
 }
 
 .navLinkDesktop {
+  font-size: 1.3rem;
   cursor: pointer;
   position: relative;
   overflow: visible;
@@ -62,7 +64,7 @@
   content: '';
   position: absolute;
   width: 100%;
-  height: 1px;
+  height: 0.1vh;
   bottom: -2px;
   left: 0;
   background-color: var(--dark);
@@ -85,6 +87,22 @@
 .open .menuBtn {
   filter: invert(100);
   padding: 15px;
+}
+
+@media (min-width: 2400px) {
+  .navLinkDesktop {
+    font-size: 2.5rem;
+  }
+
+  .navLinkDesktop::before {
+    height: 0.2vh;
+  }
+}
+
+@media (min-width: 3700px) {
+  .navLinkDesktop {
+    font-size: 3.5rem;
+  }
 }
 
 @media (max-width: 1200px) {

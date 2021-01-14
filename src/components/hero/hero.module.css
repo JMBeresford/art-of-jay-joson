@@ -1,12 +1,12 @@
 .hero {
   display: flex;
-  height: 87vh;
+  height: 100vh;
   width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 12%;
+  padding: 20% 12%;
 }
 
 .textWrapper {
@@ -28,6 +28,18 @@
 
 .img {
   margin: auto;
+}
+
+@media (min-width: 2400px) {
+  .heroText {
+    font-size: 7rem;
+  }
+}
+
+@media (min-width: 3700px) {
+  .heroText {
+    font-size: 12rem;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -63,6 +75,16 @@
   }
 }
 
+@media (min-width: 1000px) and (orientation: portrait) {
+  .textWrapper {
+    width: 80%;
+  }
+  
+  .heroText {
+    font-size: 4.25rem;
+  }
+}
+
 @media (max-width: 700px) {
   .imgWrapper {
     min-width: 70%;
@@ -72,6 +94,10 @@
 @media (max-width: 575px) {
   .imgWrapper {
     min-width: 80%;
+  }
+
+  .heroText {
+    font-size: 2.75rem;
   }
 }
 

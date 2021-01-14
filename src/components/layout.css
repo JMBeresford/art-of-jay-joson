@@ -34,24 +34,25 @@ a {
   height: 10px;
   margin-top: 3px;
   transform: none;
+
 }
 
 .circle:first-child {
   opacity: 0;
   
-  animation: top-move ease-in-out 1s infinite;
+  animation: top-move ease-in-out 1s infinite reverse;
 }
 
 .circle:nth-child(2) {
   opacity: 1;
 
-  animation: mid-move ease-in-out 1s infinite;
+  animation: mid-move ease-in-out 1s infinite reverse;
 }
 
 .circle:nth-child(3) {
   opacity: 1;
   
-  animation: bottom-move ease-in-out 1s infinite;
+  animation: bottom-move ease-in-out 1s infinite reverse;
 }
 
 @keyframes top-move {

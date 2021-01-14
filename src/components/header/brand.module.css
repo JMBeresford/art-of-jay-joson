@@ -4,6 +4,11 @@
   flex-grow: 1;
 }
 
+.home {
+  display: flex;
+  align-items: center;
+}
+
 .imgWrapper {
   min-width: 60px;
   margin-right: 1.5rem;
@@ -16,6 +21,18 @@
   font-size: 1.8rem;
   cursor: pointer;
   color: var(--text-dark);
+}
+
+@media (min-width: 2400px) {
+  .brandText {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 3700px) {
+  .brandText {
+    font-size: 5rem;
+  }
 }
 
 @media (max-width: 500px) {
