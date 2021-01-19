@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styles from './nav.module.css'
 import { Link } from 'gatsby'
-import mobileMenuSvg from '../../images/mobileMenu.svg'
-import mobileMenuClose from '../../images/mobileMenuClose.svg'
+import mobileMenuSvg from '../../svg/mobileMenu.svg'
+import mobileMenuClose from '../../svg/mobileMenuClose.svg'
 
 const Nav = () => {
   const [open, setOpen] = useState(false)

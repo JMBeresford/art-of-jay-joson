@@ -2,6 +2,7 @@
   --dark: #272A33;
   --text-dark: #3A3838;
   --accent-light: #E5E5EC;
+  --accent-dark: #798DC9;
 }
 
 * {
@@ -41,19 +42,19 @@ a {
 .circle:first-child {
   opacity: 0;
   
-  animation: top-move ease-in-out 1s infinite reverse;
+  animation: top-move linear 1s infinite reverse;
 }
 
 .circle:nth-child(2) {
   opacity: 1;
 
-  animation: mid-move ease-in-out 1s infinite reverse;
+  animation: mid-move linear 1s infinite reverse;
 }
 
 .circle:nth-child(3) {
   opacity: 1;
   
-  animation: bottom-move ease-in-out 1s infinite reverse;
+  animation: bottom-move linear 1s infinite reverse;
 }
 
 @keyframes top-move {

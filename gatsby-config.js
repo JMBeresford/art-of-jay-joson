@@ -10,6 +10,13 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `favorites`,
+                path: path.join(__dirname, `src`, `favorites`),
+            },
+        },
+        {
             resolve: "gatsby-plugin-web-font-loader",
             options: {
                 typekit: {

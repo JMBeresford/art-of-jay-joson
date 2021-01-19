@@ -1,15 +1,20 @@
 .carousel {
   height: 100vh;
   display: grid;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(121,141,201,1) 100%);
   grid-template-columns: auto repeat(2, 38%) auto;
   grid-template-rows: auto 50% 5% 20% auto;
   grid-template-areas:
     ".   .      .    ."
-    ". avatar images ."
-    ".   .    images ."
-    ". text   images ."
+    ". avatar images images"
+    ".   .    images images"
+    ". text   images images"
     ".   .      .    ."
     ;
+}
+
+.carousel * {
+  z-index: 2;
 }
 
 .avatar {
@@ -24,4 +29,10 @@
   font-size: 4rem;
   font-weight: 300;
   color: var(--dark);
+}
+
+.carouselImages {
+  overflow-x: scroll;
+  z-index: 0;
+  grid-area: images;
 }

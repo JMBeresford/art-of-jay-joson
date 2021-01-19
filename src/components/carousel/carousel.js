@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import styles from './carousel.module.css'
+import CarouselImages from './carouselImages'
 
 const Carousel = () => {
   const data = useStaticQuery(graphql`
@@ -16,8 +17,6 @@ const Carousel = () => {
     }
   `)
 
-  console.log(data)
-
   return (
     <section className={styles.carousel}>
       <div className={styles.avatar}>
@@ -27,7 +26,9 @@ const Carousel = () => {
         Here are some of my best works...
       </p>
 
-      
+      <div className={styles.carouselImages}>
+        <CarouselImages />
+      </div>
     </section>
   )
 }
