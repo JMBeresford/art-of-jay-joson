@@ -9,6 +9,10 @@
   align-items: center;
 }
 
+.home::before {
+  display: none;
+}
+
 .imgWrapper {
   min-width: 60px;
   margin-right: 1.5rem;

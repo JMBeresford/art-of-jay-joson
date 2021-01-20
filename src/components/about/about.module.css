@@ -1,0 +1,59 @@
+.about {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: auto 40% 3% 40% auto;
+  background-color: var(--accent-dark);
+  grid-template-rows: 10% 85% 5%;
+  grid-template-areas:
+    ".   .    .   .    ."
+    ". avatar . text   ."
+    ".   .    .   .    ."
+    ;
+}
+
+.about > *:not(.background) {
+  z-index: 2;
+}
+
+.avatar {
+  position: relative;
+  grid-area: avatar;
+  align-self: center;
+}
+
+.avatarText {
+  position: absolute;
+  top: 23%;
+  left: 65%;
+  font-family: "Chantal", sans-serif;
+  color: var(--text-dark);
+  font-size: 2rem;
+  transform-origin: center;
+  transform: rotateZ(-20deg);
+}
+
+.text {
+  background-color: #E3E3E3;
+  align-self: center;
+  font-family: "Proxima Nova", sans-serif;
+  color: var(--text-dark);
+  padding: 8%;
+  height: auto;
+  overflow-y: hidden;
+  border-radius: 10px;
+  grid-area: text;
+  -webkit-box-shadow: 5px 10px 15px 2px #333333;
+  box-shadow: 5px 10px 15px 2px #333333;
+}
+
+.head {
+  font-size: 3rem;
+  font-weight: 500;
+  padding-bottom: 5%;
+}
+
+.statement {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}

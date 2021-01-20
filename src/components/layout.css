@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -17,8 +18,27 @@ body {
 }
 
 a {
+  position: relative;
   text-decoration: none;
   color: var(--text-dark);
+}
+
+a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.1vh;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--dark);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .scrollIndicator {

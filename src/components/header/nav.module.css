@@ -1,13 +1,24 @@
 .nav {
+  position: fixed;
   font-family: "Chantal", sans-serif;
   font-weight: 300;
   font-size: 1.3rem;
 
   display: flex;
+  width: 40%;
+  right: 8%;
   justify-content: space-between;
   flex-grow: 2;
   max-width: 45vw;
   color: var(--text-dark);
+  transform: none;
+
+  transform-origin: right;
+  transition: transform ease-in-out 0.2s;
+}
+
+.navscrolled {
+  transform: scaleX(0);
 }
 
 .navMobile {
@@ -16,11 +27,14 @@
   font-size: 1.3rem;
   color: var(--accent-light);
 
+  opacity: 0;
+  pointer-events: none;
+
   z-index: 50;
   position: fixed;
   top: 0;
   left: 50vw;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -36,9 +50,22 @@
   transition: all ease-in-out 0.6s;
 }
 
+.navMobileScrolled {
+  opacity: 1;
+  background-color: var(--dark);
+  pointer-events: unset;
+  -webkit-box-shadow: 0px 0px 15px 5px #333333;
+  box-shadow: 0px 0px 15px 5px #333333;
+}
+
+.navMobileScrolled button {
+  filter: invert(1);
+}
+
 .menuBtn {
   height: 59px;
   width: 59px;
+  border-radius: 50%;
   border: none;
   cursor: pointer;
   outline: none;
@@ -60,24 +87,6 @@
   overflow: visible;
 }
 
-.navLinkDesktop::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 0.1vh;
-  bottom: -2px;
-  left: 0;
-  background-color: var(--dark);
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.navLinkDesktop:hover::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
 .open {
   background-color: var(--dark);
   color: var(--accent-light);
@@ -85,7 +94,7 @@
 }
 
 .open .menuBtn {
-  filter: invert(100);
+  filter: invert(1);
   padding: 15px;
 }
 
@@ -111,7 +120,8 @@
   }
 
   .navMobile {
-    display: flex;
+    pointer-events: unset;
+    opacity: 1;
   }
 }
 

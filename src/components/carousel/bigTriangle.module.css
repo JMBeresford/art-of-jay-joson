@@ -1,5 +1,6 @@
 .triangle {
   position: absolute;
+  overflow-y: hidden;
   z-index: 1;
   pointer-events: none;
   height: 200vh;

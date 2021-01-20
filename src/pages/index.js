@@ -4,6 +4,7 @@ import Header from "../components/header/header"
 import Hero from '../components/hero/hero'
 import Carousel from '../components/carousel/carousel'
 import BigTriangle from '../components/carousel/bigTriangle'
+import About from "../components/about/about"
 
 // Home page component
 const IndexPage = () => {
@@ -19,6 +20,7 @@ const IndexPage = () => {
         <Hero />
         <BigTriangle />
         <Carousel />
+        <About />
       </Layout>
     </main>
   )
