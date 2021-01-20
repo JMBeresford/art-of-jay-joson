@@ -19,6 +19,8 @@
 
 .avatar {
   grid-area: avatar;
+  -webkit-filter: drop-shadow(5px 5px 5px #333333);
+  filter: drop-shadow(5px 5px 5px #333333);
 }
 
 .avatarText {
@@ -32,7 +34,14 @@
 }
 
 .carouselImages {
+  overflow-y: visible;
   overflow-x: scroll;
   z-index: 0;
-  grid-area: images;
+  padding: 10px 0 25px;
+  grid-area: 2 / 1 / 5 / 5;
+  scrollbar-width: none;
+}
+
+.carouselImages::-webkit-scrollbar {
+  display: none;
 }
