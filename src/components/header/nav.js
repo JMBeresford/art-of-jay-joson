@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './nav.module.css'
 import { Link } from 'gatsby'
 import mobileMenuSvg from '../../svg/mobileMenu.svg'
@@ -17,9 +17,9 @@ const Nav = () => {
     }
   }
 
-  if (window) {
+  useEffect(() => {
     document.addEventListener('scroll', handleScroll)
-  }
+  })
 
   return (
     <>
