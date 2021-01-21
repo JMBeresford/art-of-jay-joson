@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styles from './brand.module.css'
-import { Link } from 'gatsby'
+import { Link } from 'gatsby';
 
 const Brand = () => {
   const data = useStaticQuery(graphql`query MyQuery {
