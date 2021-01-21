@@ -17,7 +17,9 @@ const Nav = () => {
     }
   }
 
-  document.addEventListener('scroll', handleScroll)
+  if (window) {
+    document.addEventListener('scroll', handleScroll)
+  }
 
   return (
     <>
