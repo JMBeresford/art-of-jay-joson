@@ -17,6 +17,13 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `illustrations`,
+                path: path.join(__dirname, `src`, `illustrations`),
+            },
+        },
+        {
             resolve: "gatsby-plugin-web-font-loader",
             options: {
                 typekit: {
@@ -26,5 +33,6 @@ module.exports = {
         },
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
+        `gatsby-plugin-scroll-reveal`,
     ],
 }

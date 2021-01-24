@@ -21,6 +21,7 @@
 
 .avatar {
   grid-area: avatar;
+  pointer-events: none;
   -webkit-filter: drop-shadow(5px 5px 5px #333333);
   filter: drop-shadow(5px 5px 5px #333333);
 }

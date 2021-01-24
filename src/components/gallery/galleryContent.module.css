@@ -1,0 +1,25 @@
+.content {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 13vh 7vh 5vh 75vh;
+  grid-template-columns: 8vw 12vw 60vw 12vw 8vw;
+  grid-template-areas: 
+    "header header header     header header "
+    ".      .      categories .      .      "
+    ".      .      .          .      .      "
+    ".      images images     images .      "
+  ;
+}
+
+.categories {
+  display: flex;
+  align-items: flex-end;
+  grid-area: categories;
+}
+
+.images {
+  grid-area: images;
+  height: 100%;
+  overflow-y: scroll;
+}

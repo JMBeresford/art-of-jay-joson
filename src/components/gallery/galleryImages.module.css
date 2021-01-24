@@ -1,0 +1,17 @@
+.images {
+  display: grid;
+  padding: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-auto-flow: row ;
+  grid-auto-rows: clamp(200px 30% 500px);
+}
+
+.images > * {
+  -webkit-box-shadow: 0px 10px 10px 2px #333333;
+  box-shadow: 0px 10px 10px 2px #333333;
+}
+
+.image {
+
+}

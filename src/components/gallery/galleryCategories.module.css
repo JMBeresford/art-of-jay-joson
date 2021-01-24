@@ -1,0 +1,26 @@
+.categories {
+  display: flex;
+  position: relative;
+  width: 100%;
+  font-family: "Proxima Nova", sans-serif;
+  color: var(--text-dark);
+  align-items: center;
+  justify-content: space-around;
+}
+
+.categories::before,
+.categories::after {
+  content: '';
+  position: absolute;
+  background-color: var(--text-dark);
+  height: 1px;
+  width: 15px;
+}
+
+.categories::before {
+  left: 0;
+}
+
+.categories::after {
+  right: 0;
+}
