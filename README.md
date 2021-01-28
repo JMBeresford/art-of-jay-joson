@@ -3,6 +3,8 @@
 
 This is the repo that is storing the source that is utilized to
  statically generate Jay Joson's web portfolio.
+ 
+ Tentatively hosted [here](http://artofjayjoson.netlify.app)
 
  Jay Joson is a character illustrator and animator, check out his work(s)
  at the following:
