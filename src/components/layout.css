@@ -3,13 +3,19 @@
   --text-dark: #3A3838;
   --accent-light: #E5E5EC;
   --accent-dark: #798DC9;
+
+  --carousel-width: 0px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
   scroll-behavior: smooth;
+
 }
 
 body {
@@ -43,6 +49,8 @@ a:hover::before {
 
 .scrollIndicator {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   bottom: 5%;
   left: 50%;
 
@@ -50,31 +58,31 @@ a:hover::before {
 }
 
 .circle {
-  background-color: var(--dark);
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  margin-top: 3px;
+  width: 15px;
+  height: 15px;
   transform: none;
+}
 
+.circle path {
+  fill: var(--text-dark);
 }
 
 .circle:first-child {
   opacity: 0;
   
-  animation: top-move linear 1s infinite reverse;
+  animation: top-move linear 1s infinite;
 }
 
 .circle:nth-child(2) {
   opacity: 1;
 
-  animation: mid-move linear 1s infinite reverse;
+  animation: mid-move linear 1s infinite;
 }
 
 .circle:nth-child(3) {
   opacity: 1;
   
-  animation: bottom-move linear 1s infinite reverse;
+  animation: bottom-move linear 1s infinite;
 }
 
 @keyframes top-move {
@@ -84,7 +92,7 @@ a:hover::before {
   }
 
   to {
-    transform: translateY(13px);
+    transform: translateY(15px);
     opacity: 1;
   }
 }
@@ -95,7 +103,7 @@ a:hover::before {
   }
 
   to {
-    transform: translateY(13px);
+    transform: translateY(15px);
   }
 }
 
@@ -108,7 +116,7 @@ a:hover::before {
 
   to {
     opacity: 0;
-    transform: translateY(13px) scale3d(0.5, 0.5, 0.5);
+    transform: translateY(15px) scale3d(0.5, 0.5, 0.5);
   }
 }
 

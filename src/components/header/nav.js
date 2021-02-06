@@ -25,7 +25,6 @@ const Nav = () => {
     <>
       <nav className={styles.nav + (scrolled ? " " + styles.navscrolled : "")}>
         <Link className={styles.navLinkDesktop} to="/gallery">Gallery</Link>
-        <a href="#about" className={styles.navLinkDesktop}>About Me</a>
         <Link className={styles.navLinkDesktop} to="/contact">Contact Me</Link>
         <a href="#socials" className={styles.navLinkDesktop}>Socials</a>
       </nav>
@@ -36,7 +35,6 @@ const Nav = () => {
             <img src={open ? mobileMenuClose : mobileMenuSvg} alt="menu button"/>
         </button>
         <Link className={styles.navLink} to="/gallery">Gallery</Link>
-        <a href="#about" className={styles.navLink}>About Me</a>
         <Link className={styles.navLink} to="/contact">Contact Me</Link>
         <a href="#socials" className={styles.navLink}>Socials</a>
       </nav>
