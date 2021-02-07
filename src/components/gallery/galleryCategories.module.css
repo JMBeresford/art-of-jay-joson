@@ -8,14 +8,15 @@
   justify-content: space-around;
 }
 
-.categories a {
+.categories button {
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
 
+  font-family: "Proxima Nova", sans-serif;
   transition: color ease 0.3s;
-}
-
-.categories a::before {
-  display: none;
 }
 
 .categories::before,

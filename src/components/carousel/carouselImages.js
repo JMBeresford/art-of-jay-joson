@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 import styles from './carouselImages.module.css'
 
 const CarouselImages = () => {

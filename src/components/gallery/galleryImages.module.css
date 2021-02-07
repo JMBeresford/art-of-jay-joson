@@ -7,9 +7,20 @@
   grid-auto-rows: clamp(200px 30% 500px);
 }
 
-.images > * {
+.image {
   -webkit-box-shadow: 0px 10px 10px 2px #333333;
   box-shadow: 0px 10px 10px 2px #333333;
+
+  cursor: pointer;
+  transform: none;
+  transform-origin: center;
+
+  transition: all ease-in-out 0.2s;
+}
+
+.image:hover {
+  z-index: 100;
+  transform: scale(1.1);
 }
 
 .scroll {
