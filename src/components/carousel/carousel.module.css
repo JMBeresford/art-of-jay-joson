@@ -1,4 +1,5 @@
 .carousel {
+  overflow-x: hidden;
   height: 100vh;
   display: grid;
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(121,141,201,1) 100%);
