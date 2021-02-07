@@ -8,8 +8,14 @@
   justify-content: space-around;
 }
 
-.categories p {
+.categories a {
   cursor: pointer;
+
+  transition: color ease 0.3s;
+}
+
+.categories a::before {
+  display: none;
 }
 
 .categories::before,

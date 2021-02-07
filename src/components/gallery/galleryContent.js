@@ -7,7 +7,7 @@ const GalleryContent = () => {
   const [category, setCategory] = useState(0)
 
   function changeCategory(i) {
-    console.log(i)
+    return setCategory(i);
   }
 
   return (
@@ -31,7 +31,7 @@ const GalleryContent = () => {
         data-sal-duration="600"
         data-sal-delay="800"
       >
-        <GalleryImages />
+        <GalleryImages category={category} />
       </div>
     </div>
   )

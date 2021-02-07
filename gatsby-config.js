@@ -24,6 +24,27 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `illustrations`,
+                path: path.join(__dirname, `src`, `animations`),
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `illustrations`,
+                path: path.join(__dirname, `src`, `characterDesigns`),
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `illustrations`,
+                path: path.join(__dirname, `src`, `storyBoards`),
+            },
+        },
+        {
             resolve: "gatsby-plugin-web-font-loader",
             options: {
                 typekit: {
