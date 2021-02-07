@@ -8,6 +8,10 @@
   justify-content: space-around;
 }
 
+.categories p {
+  cursor: pointer;
+}
+
 .categories::before,
 .categories::after {
   content: '';
@@ -23,4 +27,8 @@
 
 .categories::after {
   right: 0;
+}
+
+.inactive {
+  color: var(--text-light);
 }

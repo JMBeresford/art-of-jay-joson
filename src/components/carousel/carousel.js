@@ -19,10 +19,18 @@ const Carousel = () => {
 
   return (
     <section className={styles.carousel}>
-      <div className={styles.avatar}>
+      <div
+        className={styles.avatar}
+        data-sal="fade"
+        data-sal-duration="400"
+      >
         <Img fluid={data.avatar.childImageSharp.fluid}/>
       </div>
-      <p className={styles.avatarText}>
+      <p
+        className={styles.avatarText}
+        data-sal="fade"
+        data-sal-duration="400"
+      >
         Here are some of my best works...
       </p>
 
@@ -32,7 +40,13 @@ const Carousel = () => {
           <path id="Icon_ionic-md-arrow-dropright" data-name="Icon ionic-md-arrow-dropright" d="M13.5,9l7.266,7.266L13.5,23.533Z" transform="translate(-13.5 -9)" fill="#404453"/>
         </svg>
       </div>
-      <div className={styles.carouselImages}>
+      <div
+        data-sal="slide-left"
+        data-sal-delay="400"
+        data-sal-duration="1000"
+        data-sal-repeat
+        className={styles.carouselImages}
+      >
         <CarouselImages />
       </div>
     </section>

@@ -21,7 +21,12 @@ const About = () => {
   return (
     <div id="about" className={styles.about}>
 
-      <div className={styles.avatar}>
+      <div
+        className={styles.avatar}
+        data-sal="slide-down"
+        data-sal-duration="400"
+        data-sal-delay="300"
+      >
         <div className={styles.avatarText}>
           <p>"about</p>
           <p>me"?</p>
@@ -30,7 +35,12 @@ const About = () => {
         <Img fluid={data.file.childImageSharp.fluid} />
       </div>
 
-      <div className={styles.text}>
+      <div
+        className={styles.text}
+        data-sal="slide-up"
+        data-sal-duration="400"
+        data-sal-delay="300"
+      >
         <h2 className={styles.head}>Who am I?</h2>
 
         <p className={styles.statement}>
