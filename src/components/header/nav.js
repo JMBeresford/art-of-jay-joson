@@ -3,6 +3,7 @@ import styles from './nav.module.css'
 import { Link } from 'gatsby'
 import mobileMenuSvg from '../../svg/mobileMenu.svg'
 import mobileMenuClose from '../../svg/mobileMenuClose.svg'
+import Socials from './socials'
 
 const Nav = () => {
   const [open, setOpen] = useState(false)
@@ -26,7 +27,7 @@ const Nav = () => {
       <nav className={styles.nav + (scrolled ? " " + styles.navscrolled : "")}>
         <Link className={styles.navLinkDesktop} to="/gallery">Gallery</Link>
         <Link className={styles.navLinkDesktop} to="/contact">Contact Me</Link>
-        <a href="#socials" className={styles.navLinkDesktop}>Socials</a>
+        <Socials className={styles.navLinkDesktop} />
       </nav>
 
       <nav className={styles.navMobile + ((open) ? " " + styles.open: "") +
