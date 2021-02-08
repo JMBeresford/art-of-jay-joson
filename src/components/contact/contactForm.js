@@ -8,7 +8,6 @@ const ContactForm = () => {
 
       <form
         id="contactForm"
-        onSubmit={handleSubmit}
         name="contact"
         method="POST"
         data-netlify="true"
