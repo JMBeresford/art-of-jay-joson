@@ -57,6 +57,10 @@
   transition: all 0.2s ease;
 }
 
+.captcha {
+  align-self: center;
+}
+
 .formWrapper button:hover {
   background-color: var(--accent-dark);
   font-weight: bold;

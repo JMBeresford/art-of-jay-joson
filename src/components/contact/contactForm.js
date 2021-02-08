@@ -3,23 +3,9 @@ import styles from './contactForm.module.css'
 
 const ContactForm = () => {
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    let myForm = document.getElementById('contactForm');
-    let formData = new FormData(myForm)
-    fetch('/', {
-      method: 'POST',
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString()
-    }).then(() => {
-      console.log('Form successfully submitted')
-      console.log(formData)
-    }).catch((error) =>
-    alert(error))
-  }
-
   return (
     <div className={styles.formWrapper}>
+
       <form
         id="contactForm"
         onSubmit={handleSubmit}
@@ -27,7 +13,12 @@ const ContactForm = () => {
         method="POST"
         data-netlify="true"
         data-netlify-recaptcha="true"
+        netlify-honeypot="bot-field"
       >
+
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="form-name" value="contact" />
+
         <label htmlFor="name">Name</label>
         <input name="name" type="text"></input>
         
