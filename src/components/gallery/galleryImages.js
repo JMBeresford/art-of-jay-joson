@@ -101,10 +101,11 @@ const GalleryImages = (props) => {
   
   return (
     <SimpleBar className={styles.scroll}>
+      <div className={styles.fadeAway}></div>
       <div className={styles.images}>
         {images.edges.map(({ node }) => (
           <Img key={node.id} fluid={node.childImageSharp.fluid}
-            className={styles.image} />
+            className={styles.image} loading="eager" />
         ))}
       </div>
     </SimpleBar>

@@ -38,8 +38,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: calc(6.5vh - 29.5px) 8vw;
-  width: 100vw;
+  padding: calc(6.5vh - 29.5px) 8%;
+  width: 100%;
   height: 50vh;
 
   background-color: transparent;

@@ -4,6 +4,7 @@
   --text-light: #b1aeae;
   --accent-light: #E5E5EC;
   --accent-dark: #798DC9;
+  --accent-darker: #616FA1;
 
   --carousel-width: 0px;
 }
@@ -19,8 +20,33 @@ html {
 }
 
 body {
-  width: 100vw;
   overflow-x: hidden;
+  overflow-y: auto;
+  overflow-y: overlay;
+}
+
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar {
+  margin-right: 2px;
+  width: 8px;
+}
+
+*::-webkit-scrollbar-button,
+*::-webkit-scrollbar-corner {
+  display: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(49, 49, 49, 0.6);
+  border-radius: 10px;
+}
+
+.simplebar-track {
+  z-index: 201 !important;
 }
 
 a {
@@ -53,8 +79,14 @@ a:hover::before {
   flex-direction: column;
   bottom: 5%;
   left: 50%;
+  opacity: 1;
 
   transform: translateX(-50%);
+  transition: opacity ease 0.2s;
+}
+
+.scrollIndicator.hide {
+  opacity: 0;
 }
 
 .circle {

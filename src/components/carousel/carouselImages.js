@@ -10,7 +10,7 @@ const CarouselImages = () => {
         node {
           id
           childImageSharp {
-            fluid {
+            fluid(maxWidth: 400) {
               aspectRatio
               sizes
               src
@@ -25,10 +25,14 @@ const CarouselImages = () => {
   `)
 
   return (
-    <aside className={styles.carouselContent} id={"carousel"}>
+    <aside
+      data-sal="slide-left"
+      data-sal-duration="1000"
+      className={styles.carouselContent} id={"carousel"}
+    >
       {data.allFile.edges.map(({ node }) => (
         <Img key={node.id} fluid={node.childImageSharp.fluid}
-          className={styles.image} />
+          className={styles.image} loading="lazy" />
       ))}
     </aside>
   )

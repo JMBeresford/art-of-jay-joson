@@ -9,11 +9,11 @@ const Nav = () => {
   const [scrolled, setScrolled] = useState(false)
 
   function handleScroll(e) {
+    setOpen(false)
     if (window.scrollY > 50) {
       setScrolled(true)
     } else {
       setScrolled(false)
-      setOpen(false)
     }
   }
 

@@ -18,6 +18,11 @@
 
 .carousel * {
   z-index: 2;
+  scrollbar-width: none;
+}
+
+.carousel *::-webkit-scrollbar {
+  display: none;
 }
 
 .avatar {

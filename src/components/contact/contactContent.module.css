@@ -1,0 +1,39 @@
+.contactContent {
+  display: grid;
+  height: 100%;
+
+  grid-template-areas: 
+    "header header header header header "
+    ".      form   .      .      .      "
+    ".      form   .      text   .      "
+    ".      form   .      .      .      "
+    ".      .      .      .      .      ";
+
+  grid-template-columns: 8% 30% auto 40% 8%;
+  grid-template-rows: 13vh auto 45% auto 5vh;
+  
+}
+
+.contactForm {
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.textDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+
+  grid-area: text;
+}
+
+.textDiv p {
+  font-size: 3.5rem;
+  font-family: "Chantal", sans-serif;
+  font-weight: 300;
+}

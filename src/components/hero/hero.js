@@ -41,7 +41,12 @@ const Hero = () => {
         data-sal-delay="400"
         data-sal-duration="400"
       >
-        <Img className={styles.img} fluid={avatar.file.childImageSharp.fluid} alt="avatar picture" />
+        <Img
+          className={styles.img}
+          fluid={avatar.file.childImageSharp.fluid}
+          alt="avatar picture"
+          loading="eager"
+        />
       </div>
     </section>
   )
