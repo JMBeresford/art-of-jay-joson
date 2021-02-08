@@ -26,7 +26,7 @@
   top: 23%;
   left: 65%;
   font-family: "Chantal", sans-serif;
-  color: var(--text-dark);
+  color: var(--dark);
   font-size: 2rem;
   transform-origin: center;
   transform: rotateZ(-20deg);
