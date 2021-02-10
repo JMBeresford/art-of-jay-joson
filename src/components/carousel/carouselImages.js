@@ -11,11 +11,7 @@ const CarouselImages = () => {
           id
           childImageSharp {
             fluid(maxWidth: 400) {
-              aspectRatio
-              sizes
-              src
-              srcSet
-              base64
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
@@ -25,14 +21,10 @@ const CarouselImages = () => {
   `)
 
   return (
-    <aside
-      data-sal="slide-left"
-      data-sal-duration="1000"
-      className={styles.carouselContent} id={"carousel"}
-    >
+    <aside className={styles.carouselContent}>
       {data.allFile.edges.map(({ node }) => (
         <Img key={node.id} fluid={node.childImageSharp.fluid}
-          className={styles.image} loading="lazy" />
+          className={styles.image} />
       ))}
     </aside>
   )

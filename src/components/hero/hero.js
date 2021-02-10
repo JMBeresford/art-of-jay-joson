@@ -8,12 +8,8 @@ const Hero = () => {
   {
     file(relativePath: {eq: "avatar1.png"}) {
       childImageSharp {
-        fluid(quality: 100) {
-          base64
-          aspectRatio
-          sizes
-          src
-          srcSet
+        fluid(maxWidth: 700) {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
