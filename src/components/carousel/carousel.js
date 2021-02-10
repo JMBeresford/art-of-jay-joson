@@ -17,22 +17,21 @@ const Carousel = () => {
     }
   `)
 
-  const [delta, setDelta] = useState(1)
   const [direction, setDirection] = useState(1)
+  const [scrollMax, setScrollMax] = useState(0)
   const [scroll, setScroll] = useState(0)
   
   let carouselRef = useRef()
   let requestRef = useRef()
-  let sliderRef = useRef(0)
 
   const doScroll = useCallback(() => {
     if (carouselRef.current !== undefined) {
-      carouselRef.current.scrollLeft += delta * direction
+      carouselRef.current.scrollLeft += direction
       setScroll(carouselRef.current.scrollLeft)
     }
 
     requestRef.current = requestAnimationFrame(doScroll)
-  }, [delta, direction])
+  }, [direction])
 
   // start auto-scroll animation
   useEffect(() => {
@@ -42,37 +41,22 @@ const Carousel = () => {
   }, [doScroll])
 
   useEffect(() => {
-    if (scroll === 0) {
+    window.addEventListener('resize', (() => {
+      setScrollMax(carouselRef.current.scrollWidth - carouselRef.current.clientWidth)
+    }))
+
+    if (carouselRef.current.scrollLeft <= 1) {
       setDirection(1)
-    } else if (`${scroll}` === sliderRef.current.max) {
+    } else if (scroll >= scrollMax - 1) {
       setDirection(-1)
     }
-  }, [scroll])
+  }, [scroll, scrollMax])
 
   useLayoutEffect(() => {
-    if (sliderRef.current !== undefined) {
-      sliderRef.current.max = carouselRef.current.scrollWidth - carouselRef.current.clientWidth
+    if (carouselRef.current !== undefined) {
+      setScrollMax(carouselRef.current.scrollWidth - carouselRef.current.clientWidth)
     }
   }, [])
-
-  function pauseAnimation(e) {
-    if (delta !== 0) {
-      setDelta(0)
-    }
-  }
-
-  function resumeAnimation(e) {
-    if (delta !== 1) {
-      setDelta(1)
-    }
-  }
-
-  const handleSlide = (e) => {
-    setScroll(e.target.value)
-    if (carouselRef.current !== undefined) {
-      carouselRef.current.scrollLeft = scroll
-    }
-  }
 
   return (
     <section className={styles.carousel}>
@@ -105,9 +89,6 @@ const Carousel = () => {
       </div>
       <div
         ref={carouselRef}
-        aria-hidden="true"
-        onMouseEnter={pauseAnimation}
-        onMouseLeave={resumeAnimation}
         className={styles.carouselImages}
         data-sal="slide-left"
         data-sal-duration="1000"
@@ -115,16 +96,6 @@ const Carousel = () => {
         <CarouselImages />
 
       </div>
-
-      <input
-        className={styles.sliderLiteral}
-        ref={sliderRef}
-        type="range"
-        min="0"
-        value={scroll}
-        onChange={handleSlide}
-        step="1"
-      />
 
     </section>
   )
