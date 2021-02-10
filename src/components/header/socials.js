@@ -7,7 +7,7 @@ const Socials = () => {
 
   return (
     <div className={styles.socialsMenu + (dropped ? ` ${styles.open}` : '')}>
-      <div className={styles.wrapper} onClick={() => setDropped(!dropped)}>
+      <div className={styles.wrapper} aria-hidden="true" onClick={() => setDropped(!dropped)}>
         <p>Socials</p>
 
         <svg className={styles.arrow} xmlns="http://www.w3.org/2000/svg" width="7.266" height="14.533" viewBox="0 0 7.266 14.533">

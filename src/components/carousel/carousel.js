@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useEffect, useRef, useCallback, useLayoutEffect } from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styles from './carousel.module.css'
@@ -19,70 +19,60 @@ const Carousel = () => {
 
   const [delta, setDelta] = useState(1)
   const [direction, setDirection] = useState(1)
+  const [scroll, setScroll] = useState(0)
+  
   let carouselRef = useRef()
   let requestRef = useRef()
-  let deltaRef = useRef(1)
+  let sliderRef = useRef(0)
 
   const doScroll = useCallback(() => {
     if (carouselRef.current !== undefined) {
       carouselRef.current.scrollLeft += delta * direction
+      setScroll(carouselRef.current.scrollLeft)
     }
 
     requestRef.current = requestAnimationFrame(doScroll)
   }, [delta, direction])
 
-  // default scroll
+  // start auto-scroll animation
   useEffect(() => {
     requestRef.current = requestAnimationFrame(doScroll)
-    console.log("doscroll changed")
 
     return () => cancelAnimationFrame(requestRef.current)
   }, [doScroll])
 
-  const changeDirection = (newDirection) => {
-    if (direction === newDirection) {
-      return
+  useEffect(() => {
+    if (scroll === 0) {
+      setDirection(1)
+    } else if (`${scroll}` === sliderRef.current.max) {
+      setDirection(-1)
     }
+  }, [scroll])
 
-    setDirection(newDirection)
-  }
-
-  const handleLeft = () => {
-    if (delta !== 5) {
-      setDelta(5)
-      deltaRef.current = delta
+  useLayoutEffect(() => {
+    if (sliderRef.current !== undefined) {
+      sliderRef.current.max = carouselRef.current.scrollWidth - carouselRef.current.clientWidth
     }
+  }, [])
 
-    changeDirection(-1)
-  }
-
-  const handleRight = () => {
-    if (delta !== 5) {
-      setDelta(5)
-      deltaRef.current = delta
-    }
-    
-    changeDirection(1)
-  }
-
-  const handleMiddle = () => {
+  function pauseAnimation(e) {
     if (delta !== 0) {
       setDelta(0)
-      deltaRef.current = delta
     }
-
-    changeDirection(0)
   }
 
-  const handleExit = () => {
+  function resumeAnimation(e) {
     if (delta !== 1) {
       setDelta(1)
-      deltaRef.current = delta
     }
-    
-    changeDirection(1)
   }
 
+  const handleSlide = (e) => {
+    setScroll(e.target.value)
+    if (carouselRef.current !== undefined) {
+      carouselRef.current.scrollLeft = scroll
+    }
+  }
 
   return (
     <section className={styles.carousel}>
@@ -115,25 +105,25 @@ const Carousel = () => {
       </div>
       <div
         ref={carouselRef}
-        onMouseEnter={() => handleMiddle()}
-        onMouseLeave={() => handleExit()}
+        aria-hidden="true"
+        onMouseEnter={pauseAnimation}
+        onMouseLeave={resumeAnimation}
         className={styles.carouselImages}
         data-sal="slide-left"
         data-sal-duration="1000"
       >
         <CarouselImages />
+
       </div>
 
-      <div
-        onMouseEnter={() => handleLeft()}
-        onMouseLeave={() => handleExit()}
-        className={styles.scrollLeft}
-      />
-
-      <div
-        onMouseEnter={() => handleRight()}
-        onMouseLeave={() => handleExit()}
-        className={styles.scrollRight}
+      <input
+        className={styles.sliderLiteral}
+        ref={sliderRef}
+        type="range"
+        min="0"
+        value={scroll}
+        onChange={handleSlide}
+        step="1"
       />
 
     </section>
