@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+
 }
 
 .wrapper {
@@ -14,14 +15,14 @@
 }
 
 .arrow {
-  margin-left: 10px;
-  transform: rotateZ(90deg) scale(0.7);
+  margin-left: 1.2rem;
+  transform: rotateZ(90deg) scale(var(--little-arrow));
   
   transition: all 0.2s ease-in-out;
 }
 
 .wrapper:hover .arrow {
-  transform: rotateZ(90deg) scale(1.1);
+  transform: rotateZ(90deg) scale(var(--big-arrow));
 }
 
 .menu {
@@ -43,9 +44,35 @@
 }
 
 .open .arrow {
-  transform: rotateZ(270deg) scale(0.7);
+  transform: rotateZ(270deg) scale(var(--little-arrow));
 }
 
 .open .wrapper:hover .arrow {
-  transform: rotateZ(270deg) scale(1.1);
+  transform: rotateZ(270deg) scale(var(--big-arrow));
+}
+
+@media (min-width: 2400px) {
+  .socialsMenu p, .socialsMenu a {
+    font-size: 2.5rem;
+  }
+
+  .navLinkDesktop::before {
+    height: 0.2vh;
+  }
+
+  .socialsMenu {
+    --little-arrow: 1.1;
+    --big-arrow: 1.3;
+  }
+}
+
+@media (min-width: 3700px) {
+  .socialsMenu p, .socialsMenu a {
+    font-size: 3.5rem;
+  }
+
+  .socialsMenu {
+    --little-arrow: 2;
+    --big-arrow: 2.8;
+  }
 }

@@ -57,3 +57,40 @@
   letter-spacing: 2px;
   line-height: 1.5;
 }
+
+@media (max-width: 1000px) {
+  .about {
+    grid-template-columns: 1fr 90% 1fr;
+    background-color: var(--accent-dark);
+    grid-template-rows: 1fr 40% 50% 1fr;
+    grid-template-areas:
+      ".   .    ."
+      ". avatar ."
+      ".  text  ."
+      ".   .    ."
+      ;
+  }
+
+  .text {
+    
+  -webkit-box-shadow: 5px 5px 15px 2px #333333;
+  box-shadow: 5px 5px 15px 2px #333333;
+  }
+
+  .head {
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding-bottom: 5%;
+  }
+
+  .statement {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 1.5;
+  }
+
+  .avatarText {
+    font-size: 1.25rem;
+  }
+}

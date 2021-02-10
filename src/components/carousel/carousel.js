@@ -25,7 +25,7 @@ const Carousel = () => {
   let requestRef = useRef()
 
   const doScroll = useCallback(() => {
-    if (carouselRef.current !== undefined) {
+    if (carouselRef.current !== null) {
       carouselRef.current.scrollLeft += direction
       setScroll(carouselRef.current.scrollLeft)
     }
@@ -40,20 +40,24 @@ const Carousel = () => {
     return () => cancelAnimationFrame(requestRef.current)
   }, [doScroll])
 
+  const handleResize = () => {
+    setScrollMax(carouselRef.current.scrollWidth - carouselRef.current.clientWidth)
+  }
+
   useEffect(() => {
-    window.addEventListener('resize', (() => {
-      setScrollMax(carouselRef.current.scrollWidth - carouselRef.current.clientWidth)
-    }))
+    window.addEventListener('resize', handleResize)
 
     if (carouselRef.current.scrollLeft <= 1) {
       setDirection(1)
     } else if (scroll >= scrollMax - 1) {
       setDirection(-1)
     }
+
+    return () => window.removeEventListener('resize', handleResize)
   }, [scroll, scrollMax])
 
   useLayoutEffect(() => {
-    if (carouselRef.current !== undefined) {
+    if (carouselRef.current !== null) {
       setScrollMax(carouselRef.current.scrollWidth - carouselRef.current.clientWidth)
     }
   }, [])
