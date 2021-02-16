@@ -61,7 +61,7 @@
 @media (max-width: 1000px) {
   .about {
     grid-template-columns: 1fr 90% 1fr;
-    background-color: var(--accent-dark);
+    background-color: transparent;
     grid-template-rows: 1fr 40% 50% 1fr;
     grid-template-areas:
       ".   .    ."

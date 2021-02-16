@@ -185,6 +185,7 @@ how to remove the virtical space around the range input in IE*/
 
 @media (max-width: 1000px) {
   .carousel {
+    background: none;
     grid-template-columns: 1fr 90% 1fr;
     grid-template-rows: 1fr 35% 15% 45% 5% 1fr;
     grid-template-areas:

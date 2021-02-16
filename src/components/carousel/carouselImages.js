@@ -11,7 +11,7 @@ const CarouselImages = () => {
           id
           childImageSharp {
             fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }

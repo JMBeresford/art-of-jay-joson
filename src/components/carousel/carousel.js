@@ -9,8 +9,8 @@ const Carousel = () => {
     query {
       avatar: file(relativePath: {eq: "avatar2.png"}) {
         childImageSharp {
-          fluid(maxWidth: 700, quality: 100) {
-            ...GatsbyImageSharpFluid_tracedSVG
+          fluid(maxWidth: 700) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
       }
@@ -94,8 +94,6 @@ const Carousel = () => {
       <div
         ref={carouselRef}
         className={styles.carouselImages}
-        data-sal="slide-left"
-        data-sal-duration="1000"
       >
         <CarouselImages />
 

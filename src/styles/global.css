@@ -165,4 +165,9 @@ a:hover::before {
   .scrollIndicator {
     display: none;
   }
+
+  #index {
+    background: rgb(121,141,201);
+    background: linear-gradient(0deg, rgba(121,141,201,1) 33%, rgba(255,255,255,1) 100%);
+  }
 }

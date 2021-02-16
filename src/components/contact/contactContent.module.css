@@ -37,3 +37,22 @@
   font-family: "Chantal", sans-serif;
   font-weight: 300;
 }
+
+@media (max-width: 1000px) {
+  .contactContent {  
+    grid-template-areas: 
+      "header header header"
+      ".      form   .     "
+      ".      form   .     "
+      ".      form   .     "
+      ".      .      .     ";
+  
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 13vh auto 45% auto 5vh;
+    
+  }
+
+  .textDiv {
+    display: none;
+  }
+}

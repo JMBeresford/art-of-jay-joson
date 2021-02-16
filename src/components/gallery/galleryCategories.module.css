@@ -1,11 +1,19 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
 .categories {
   display: flex;
   position: relative;
-  width: 100%;
   font-family: "Proxima Nova", sans-serif;
   color: var(--text-dark);
   align-items: center;
   justify-content: space-around;
+}
+
+.mobileDashes {
+  display: none;
 }
 
 .categories button {
@@ -21,10 +29,9 @@
 
 .categories::before,
 .categories::after {
-  content: '';
+  content: '—';
   position: absolute;
-  background-color: var(--text-dark);
-  height: 1px;
+  height: 100%;
   width: 15px;
 }
 
@@ -38,4 +45,54 @@
 
 .inactive {
   color: var(--text-light);
+}
+
+@media (max-width: 1000px) {
+  .categories {
+    display: grid;
+    grid-auto-flow: column;
+    padding: 0 10%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    justify-content: flex-start;
+  }
+
+  .categories button {
+    margin: 0 15px;
+  }
+
+  .mobileDashes {
+    display: flex;
+    pointer-events: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    justify-content: space-between;
+    z-index: 50;
+  }
+
+  .mobileDashes p {
+    z-index: 75;
+  }
+
+  .fader {
+    position: absolute;
+    right: 0;
+    left: 80%;
+    height: 100%;
+    z-index: 60;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+  }
+  .categories::before {
+    display: none;
+  }
+
+  .categories::after {
+    display: block;
+    position: static;
+    content: ' ';
+    width: 50px;
+    background-color: transparent;
+  }
 }

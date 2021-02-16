@@ -8,3 +8,9 @@
   padding: 0 8%;
   background: linear-gradient(#d6d6e6, rgba(255,255,255,0));
 }
+
+@media (max-width: 1000px) {
+  .header {
+    background: none;
+  }
+}
