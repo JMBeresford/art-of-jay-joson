@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef, useCallback, useLayoutEffect } from 'react'
+import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styles from './carousel.module.css'
 import CarouselImages from './carouselImages'
+import ScrollContainer from 'react-indiana-drag-scroll'
 
 const Carousel = () => {
   const data = useStaticQuery(graphql`
@@ -16,51 +17,6 @@ const Carousel = () => {
       }
     }
   `)
-
-  const [direction, setDirection] = useState(1)
-  const [scrollMax, setScrollMax] = useState(0)
-  const [scroll, setScroll] = useState(0)
-  
-  let carouselRef = useRef()
-  let requestRef = useRef()
-
-  const doScroll = useCallback(() => {
-    if (carouselRef.current !== null) {
-      carouselRef.current.scrollLeft += direction
-      setScroll(carouselRef.current.scrollLeft)
-    }
-
-    requestRef.current = requestAnimationFrame(doScroll)
-  }, [direction])
-
-  // start auto-scroll animation
-  useEffect(() => {
-    requestRef.current = requestAnimationFrame(doScroll)
-
-    return () => cancelAnimationFrame(requestRef.current)
-  }, [doScroll])
-
-  const handleResize = () => {
-    setScrollMax(carouselRef.current.scrollWidth - carouselRef.current.clientWidth)
-  }
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize)
-
-    if (carouselRef.current.scrollLeft <= 1) {
-      setDirection(1)
-    } else if (scroll >= scrollMax - 1) {
-      setDirection(-1)
-    }
-
-    return () => window.removeEventListener('resize', handleResize)
-  }, [scroll, scrollMax])
-
-  useLayoutEffect(() => {
-    if (carouselRef.current !== null) {
-      setScrollMax(carouselRef.current.scrollWidth - carouselRef.current.clientWidth)
-    }
-  }, [])
 
   return (
     <section className={styles.carousel}>
@@ -92,11 +48,15 @@ const Carousel = () => {
         </svg>
       </div>
       <div
-        ref={carouselRef}
         className={styles.carouselImages}
+        data-sal="slide-left"
+        data-sal-duration="500"
       >
-        <CarouselImages />
-
+        <ScrollContainer
+          className={styles.carouselImages}
+        >
+          <CarouselImages />
+        </ScrollContainer>
       </div>
 
     </section>

@@ -17,6 +17,38 @@
   transition: transform ease-in-out 0.2s;
 }
 
+.arrow {
+  z-index: 110;
+  position: fixed;
+  cursor: pointer;
+  right: 8%;
+  opacity: 0;
+  background-color: var(--dark);
+  display: flex;
+  fill: var(--accent-light);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transform: rotateZ(180deg) scale(0.7);
+
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.arrow::before, .arrow::after {
+  display: none;
+}
+
+.arrow.scrolled {
+  opacity: 1;
+}
+
+.arrow:hover {
+  transform: rotateZ(180deg) scale(1);
+}
+
 .navscrolled {
   transform: scaleX(0);
 }
@@ -40,7 +72,7 @@
   justify-content: space-between;
   padding: calc(6.5vh - 29.5px) 8%;
   width: 100%;
-  height: 50vh;
+  height: 100%;
 
   background-color: transparent;
   border-bottom-left-radius: 10px;
@@ -51,9 +83,7 @@
 }
 
 .navMobileScrolled {
-  opacity: 1;
   background-color: var(--dark);
-  pointer-events: unset;
 }
 
 .navMobileScrolled button {

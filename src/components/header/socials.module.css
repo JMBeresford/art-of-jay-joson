@@ -4,12 +4,24 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
 
+.socialsMenu.mobile .arrow {
+  fill: var(--accent-light);
+}
+
+.socialsMenu.mobile a {
+  color: var(--accent-light);
+}
+
+.socialsMenu.mobile .menu {
+  position: static;
 }
 
 .wrapper {
   display: flex;
   align-items: center;
+  font-size: inherit;
 
   cursor: pointer;
 }
