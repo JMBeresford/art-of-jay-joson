@@ -62,7 +62,7 @@
   opacity: 0;
   pointer-events: none;
 
-  z-index: 100;
+  z-index: 111;
   position: fixed;
   top: 0;
   left: 0;
@@ -148,7 +148,7 @@
 }
 
 @media (max-width: 1200px) {
-  .nav {
+  .nav, .arrow {
     display: none;
   }
 
