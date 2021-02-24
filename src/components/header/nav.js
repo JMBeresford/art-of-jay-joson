@@ -47,7 +47,7 @@ const Nav = () => {
         <Link className={styles.navLink} to="/gallery">Gallery</Link>
         <Link className={styles.navLink} to="/contact">Contact Me</Link>
         <div className={styles.navLink}>
-          <Socials mobile={scrolled} />
+          <Socials mobile={true} />
         </div>
       </nav>
     </>

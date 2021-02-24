@@ -18,7 +18,7 @@
 }
 
 .arrow {
-  z-index: 110;
+  z-index: -1;
   position: fixed;
   cursor: pointer;
   right: 8%;
@@ -42,7 +42,9 @@
 }
 
 .arrow.scrolled {
+  display: flex;
   opacity: 1;
+  z-index: 110;
 }
 
 .arrow:hover {
@@ -75,8 +77,6 @@
   height: 100%;
 
   background-color: transparent;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
   clip-path: circle(29.5px at calc(92% - 29.5px) 6.5vh);
 
   transition: all ease-in-out 0.6s;
@@ -148,7 +148,7 @@
 }
 
 @media (max-width: 1200px) {
-  .nav, .arrow {
+  .nav, .arrow, .arrow.scrolled {
     display: none;
   }
 
