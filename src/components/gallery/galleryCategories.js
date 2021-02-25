@@ -5,9 +5,10 @@ const GalleryCategories = (props) => {
   return (
     <nav className={styles.wrapper}>
       <div className={styles.mobileDashes}>
+        <div className={styles.fader1} />
         <p>—</p>
         <p>—</p>
-        <div className={styles.fader} />
+        <div className={styles.fader2} />
       </div>
       <div className={styles.categories}>
         <button href="#"

@@ -5,7 +5,7 @@ import mobileMenuSvg from '../../svg/mobileMenu.svg'
 import mobileMenuClose from '../../svg/mobileMenuClose.svg'
 import Socials from './socials'
 
-const Nav = () => {
+const Nav = (props) => {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -40,6 +40,7 @@ const Nav = () => {
       </a>
 
       <button
+        style={{position: (props.scrollable ? "fixed" : "absolute")}}
         className={styles.menuBtn + (open ? " " + styles.open: "")
           + (scrolled ? " " + styles.scrolled: "")}
         onClick={() => setOpen(prev => !prev)}
