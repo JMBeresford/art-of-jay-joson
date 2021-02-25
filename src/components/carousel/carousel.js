@@ -36,18 +36,6 @@ const Carousel = () => {
       </p>
 
       <div
-        className={styles.seeMore}
-        data-sal="fade"
-        data-sal-delay="1000"
-      >
-        <Link to="/gallery">Check out the rest</Link>
-        
-        
-        <svg xmlns="http://www.w3.org/2000/svg" width="7.266" height="14.533" viewBox="0 0 7.266 14.533">
-          <path id="Icon_ionic-md-arrow-dropright" data-name="Icon ionic-md-arrow-dropright" d="M13.5,9l7.266,7.266L13.5,23.533Z" transform="translate(-13.5 -9)" fill="#404453"/>
-        </svg>
-      </div>
-      <div
         className={styles.carouselImages}
         data-sal="slide-left"
         data-sal-duration="500"
@@ -59,6 +47,18 @@ const Carousel = () => {
         </ScrollContainer>
       </div>
 
+      <div
+        className={styles.seeMore}
+        data-sal="fade"
+        data-sal-delay="1000"
+      >
+        <Link to="/gallery">Check out the rest</Link>
+        
+        
+        <svg xmlns="http://www.w3.org/2000/svg" width="7.266" height="14.533" viewBox="0 0 7.266 14.533">
+          <path id="Icon_ionic-md-arrow-dropright" data-name="Icon ionic-md-arrow-dropright" d="M13.5,9l7.266,7.266L13.5,23.533Z" transform="translate(-13.5 -9)" fill="#404453"/>
+        </svg>
+      </div>
     </section>
   )
 }

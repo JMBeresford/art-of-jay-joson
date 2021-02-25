@@ -1,15 +1,17 @@
 .header {
   display: flex;
   position: absolute;
-  height: 13vh;
-  width: 100vw;
+  top: 0;
+  left: 0;
+  height: 13%;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   padding: 0 8%;
   background: linear-gradient(#d6d6e6, rgba(255,255,255,0));
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .header {
     background: none;
   }

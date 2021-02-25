@@ -22,10 +22,12 @@ const CarouselImages = () => {
 
   return (
     <aside className={styles.carouselContent}>
+      <div className={styles.spacer} />
       {data.allFile.edges.map(({ node }) => (
         <Img key={node.id} fluid={node.childImageSharp.fluid}
-          className={styles.image} />
-      ))}
+        className={styles.image} />
+        ))}
+      <div className={styles.spacer} />
     </aside>
   )
 }

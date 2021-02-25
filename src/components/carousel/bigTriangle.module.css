@@ -1,20 +1,26 @@
-.triangle {
+.svgWrapper {
   position: absolute;
-  overflow-y: hidden;
-  z-index: 1;
+  width: 100vw;
+  height: auto;
+  overflow-x: hidden;
   pointer-events: none;
   height: 200vh;
-  width: 144vw;
+  width: 100vw;
+}
+
+.triangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 144%;
+  overflow: hidden;
+  z-index: 1;
 
   fill: #616fa1;
 }
 
-.svgWrapper {
-  width: 100vw;
-  overflow-x: hidden;
-}
-
-@media (max-width: 1000px), (orientation: portrait) {
+@media (max-width: 1200px) and (orientation: portrait) {
   .triangle {
     display: none;
   }

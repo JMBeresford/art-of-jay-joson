@@ -24,9 +24,15 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   overflow-y: overlay;
+
+  width: 100vw;
 }
 
-@media (min-width: 1000px) {
+#index {
+  overflow-x: hidden;
+}
+
+@media (min-width: 1200px) {
   *::-webkit-scrollbar-track,
   *::-webkit-scrollbar-track-piece {
     background-color: transparent;
@@ -161,7 +167,7 @@ a:hover::before {
   }
 }
 
-@media (max-width: 1000px), (orientation: portrait) {
+@media (max-width: 1200px), (orientation: portrait) {
   .scrollIndicator {
     display: none;
   }
