@@ -32,6 +32,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-indiana-drag-scroll": "^1.8.0",
+    "react-responsive": "^8.2.0",
     "react-smooth-scrollbar": "^8.0.6",
     "simplebar-react": "^2.3.0",
     "smooth-scrollbar": "^8.6.0",

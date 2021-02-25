@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import styles from './carousel.module.css'
 import CarouselImages from './carouselImages'
 import ScrollContainer from 'react-indiana-drag-scroll'
+import { useMediaQuery } from 'react-responsive'
 
 const Carousel = () => {
   const data = useStaticQuery(graphql`
@@ -18,8 +19,11 @@ const Carousel = () => {
     }
   `)
 
+  const isMobile = useMediaQuery({query: "(max-width: 1200px)"});
+
   return (
     <section className={styles.carousel}>
+      {isMobile ?
       <div
         className={styles.avatar}
         data-sal="fade"
@@ -27,6 +31,11 @@ const Carousel = () => {
       >
         <Img fluid={data.avatar.childImageSharp.fluid}/>
       </div>
+      :
+      <div className={styles.avatar}>
+        <Img fluid={data.avatar.childImageSharp.fluid}/>
+      </div>}
+
       <p
         className={styles.avatarText}
         data-sal="fade"
