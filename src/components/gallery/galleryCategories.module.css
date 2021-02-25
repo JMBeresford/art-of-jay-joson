@@ -1,13 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+}
 .wrapper {
   position: relative;
   display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
   justify-content: center;
   overflow-x: hidden;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
 }
 
 .categories {
   display: flex;
+  flex-wrap: nowrap;
+  width: auto;
+  padding: 0 3rem;
+  max-width: 98%;
   position: relative;
   font-family: "Proxima Nova", sans-serif;
   color: var(--text-dark);
@@ -25,6 +39,7 @@
   border: none;
   outline: none;
   font-size: 1rem;
+  margin: 0 1.5rem;
 
   font-family: "Proxima Nova", sans-serif;
   transition: color ease 0.3s;
@@ -52,13 +67,18 @@
 
 @media (max-width: 1200px) {
   .categories {
-    width: 98%;
+    width: auto;
+    max-width: 98%;
     justify-content: stretch;
     display: flex;
     padding: 0 10%;
     white-space: nowrap;
     overflow-x: scroll;
     scrollbar-width: none;
+  }
+
+  .categories button {
+
   }
 
   .categories::-webkit-scrollbar {
