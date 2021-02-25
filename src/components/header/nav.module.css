@@ -69,7 +69,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: stretch;
   text-align: center;
@@ -79,9 +79,18 @@
   height: 100%;
 
   background-color: transparent;
-  clip-path: circle(29.5px at calc(92% - 29.5px) 6.5vh);
+  clip-path: circle(0 at calc(92% - 29.5px) 6.5vh);
 
   transition: all ease-in-out 0.6s;
+}
+
+.navMobile.open {
+  z-index: 111;
+  opacity: 1;
+  pointer-events: all;
+  background-color: var(--dark);
+  color: var(--accent-light);
+  clip-path: circle(200vh at calc(84% - 29.5px) 29.5px);
 }
 
 .navMobileScrolled {
@@ -93,7 +102,12 @@
 }
 
 .menuBtn {
-  align-self: flex-end;
+  position: fixed;
+  top: calc(6.5vh - 29.5px);
+  right: 8%;
+  opacity: 1;
+  pointer-events: all;
+  z-index: 112;
   height: 59px;
   width: 59px;
   border-radius: 50%;
@@ -101,6 +115,17 @@
   cursor: pointer;
   outline: none;
   background-color: transparent;
+
+
+  transition: background-color ease-in-out 0.6s;
+}
+
+.menuBtn.scrolled {
+  background-color: var(--dark);
+}
+
+.menuBtn.scrolled:not(.open) img {
+  filter: invert(1);
 }
 
 .navLink {
@@ -117,18 +142,11 @@
   overflow: visible;
 }
 
-.open {
-  background-color: var(--dark);
-  color: var(--accent-light);
-  clip-path: circle(200vh at calc(84% - 29.5px) 29.5px);
-}
-
 .open a::before {
   background-color: var(--accent-light);
 }
 
-.open .menuBtn {
-  filter: invert(1);
+.menuBtn.open {
   padding: 15px;
 }
 
@@ -154,8 +172,7 @@
   }
 
   .navMobile {
-    pointer-events: unset;
-    opacity: 1;
+    display: flex;
   }
 }
 

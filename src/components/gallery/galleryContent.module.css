@@ -24,7 +24,7 @@
   overflow-y: hidden;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .content {
     grid-template-areas: 
     "header header header     header header "

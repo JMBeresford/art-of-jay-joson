@@ -39,11 +39,16 @@ const Nav = () => {
         </svg>
       </a>
 
+      <button
+        className={styles.menuBtn + (open ? " " + styles.open: "")
+          + (scrolled ? " " + styles.scrolled: "")}
+        onClick={() => setOpen(prev => !prev)}
+      >
+          <img src={open ? mobileMenuClose : mobileMenuSvg} alt="menu button"/>
+      </button>
+
       <nav className={styles.navMobile + ((open) ? " " + styles.open: "") +
                       (scrolled ? " " + styles.navMobileScrolled : "")}>
-        <button className={styles.menuBtn} onClick={() => setOpen(prev => !prev)}>
-            <img src={open ? mobileMenuClose : mobileMenuSvg} alt="menu button"/>
-        </button>
         <Link className={styles.navLink} to="/gallery">Gallery</Link>
         <Link className={styles.navLink} to="/contact">Contact Me</Link>
         <div className={styles.navLink}>

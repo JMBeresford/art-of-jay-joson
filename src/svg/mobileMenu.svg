@@ -1,18 +1,3 @@
-<svg fill="#3A3838" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="59" height="59" viewBox="0 0 59 59">
-  <defs>
-    <clipPath id="clip-path">
-      <circle id="Ellipse_3" data-name="Ellipse 3" cx="29.5" cy="29.5" r="29.5" transform="translate(340 11)" fill="none"/>
-    </clipPath>
-  </defs>
-  <g id="Mask_Group_6" data-name="Mask Group 6" transform="translate(-340 -11)" clip-path="url(#clip-path)">
-    <path id="Rectangle_64" data-name="Rectangle 64" d="M0,0H414a0,0,0,0,1,0,0V296a10,10,0,0,1-10,10H10A10,10,0,0,1,0,296V0A0,0,0,0,1,0,0Z" fill="none"/>
-    <g id="Links" transform="translate(-124 53)">
-      <text id="My_Work" data-name="My Work" transform="translate(265 36)" fill="#404453" font-size="20" font-family="ProximaNova-Regular, Proxima Nova" letter-spacing="0.125em"><tspan x="-45.66" y="18">My Work</tspan></text>
-      <text id="Gallery" transform="translate(265 94)" fill="#404453" font-size="20" font-family="ProximaNova-Regular, Proxima Nova" letter-spacing="0.125em"><tspan x="-38.23" y="18">Gallery</tspan></text>
-      <text id="Contact_Me" data-name="Contact Me" transform="translate(265 211)" fill="#404453" font-size="20" font-family="ProximaNova-Regular, Proxima Nova" letter-spacing="0.125em"><tspan x="-61.64" y="18">Contact Me</tspan></text>
-      <text id="About_Me" data-name="About Me" transform="translate(265 153)" fill="#404453" font-size="20" font-family="ProximaNova-Regular, Proxima Nova" letter-spacing="0.125em"><tspan x="-51.55" y="18">About Me</tspan></text>
-    </g>
-    <path id="Icon_material-close" data-name="Icon material-close" d="M28.5,9.615,26.385,7.5,18,15.885,9.615,7.5,7.5,9.615,15.885,18,7.5,26.385,9.615,28.5,18,20.115,26.385,28.5,28.5,26.385,20.115,18Z" transform="translate(351.5 22.5)" opacity="0"/>
-    <path id="Icon_material-menu" data-name="Icon material-menu" d="M4.5,27h27V24H4.5Zm0-7.5h27v-3H4.5ZM4.5,9v3h27V9Z" transform="translate(351 22)"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="18" viewBox="0 0 27 18">
+  <path id="Icon_material-menu" data-name="Icon material-menu" d="M4.5,27h27V24H4.5Zm0-7.5h27v-3H4.5ZM4.5,9v3h27V9Z" transform="translate(-4.5 -9)"/>
 </svg>

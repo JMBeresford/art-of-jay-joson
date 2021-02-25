@@ -46,7 +46,7 @@
   height: 20px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .images {
     display: grid;
     padding: 10px;

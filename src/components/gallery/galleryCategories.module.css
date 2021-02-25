@@ -31,7 +31,7 @@
 .categories::after {
   content: '—';
   position: absolute;
-  height: 100%;
+  top: 0;
   width: 15px;
 }
 
@@ -47,18 +47,18 @@
   color: var(--text-light);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .categories {
     display: grid;
     grid-auto-flow: column;
     padding: 0 10%;
     white-space: nowrap;
     overflow-x: scroll;
-    justify-content: flex-start;
   }
 
   .categories button {
     margin: 0 15px;
+    font-size: 1.5rem;
   }
 
   .mobileDashes {
@@ -94,5 +94,11 @@
     content: ' ';
     width: 50px;
     background-color: transparent;
+  }
+}
+
+@media (max-width: 1000px) {
+  .categories button {
+    font-size: 1rem;
   }
 }
