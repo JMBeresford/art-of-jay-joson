@@ -77,10 +77,6 @@
     scrollbar-width: none;
   }
 
-  .categories button {
-
-  }
-
   .categories::-webkit-scrollbar {
     display: none;
   }
@@ -115,11 +111,11 @@
     width: 55px;
     height: 100%;
     z-index: 60;
-    background: rgb(2,0,36);
-    background: -moz-linear-gradient(270deg, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
-    background: -webkit-linear-gradient(270deg, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
-    background: linear-gradient(270deg, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#ffffff",GradientType=1);
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+    background: -webkit-linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
   }
 
   .fader2 {
@@ -128,12 +124,12 @@
     width: 50px;
     height: 100%;
     z-index: 60;
-    background: rgb(2,0,36);
-    background: -moz-linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
-    background: linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#ffffff",GradientType=1);
-  }
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+}
   
   .categories::before {
     display: none;
