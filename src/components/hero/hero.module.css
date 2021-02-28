@@ -11,6 +11,22 @@
 
 .textWrapper {
   width: 50%;
+
+  animation-name: text-ani;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes text-ani {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .heroText {
@@ -24,6 +40,22 @@
 .imgWrapper {
   overflow: visible;
   min-width: 40%;
+
+  animation-name: avatar-ani;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes avatar-ani {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .img {
@@ -54,7 +86,7 @@
   }
 }
 
-@media (max-width: 1200px), (orientation: portrait) {
+@media (max-width: 1200px) and (orientation: portrait) {
   .hero {
     flex-direction: column-reverse;
     justify-content: center;

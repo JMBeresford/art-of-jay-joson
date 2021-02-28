@@ -38,6 +38,12 @@
   font-weight: 300;
 }
 
+@media (max-width: 1200px) and (orientation: landscape) {
+  .textDiv p {
+    font-size: 3rem;
+  }
+}
+
 @media (max-width: 1000px) {
   .contactContent {  
     grid-template-areas: 

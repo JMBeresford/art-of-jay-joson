@@ -1,15 +1,14 @@
-import React from 'react'
-import { graphql, useStaticQuery, Link } from 'gatsby'
-import Img from 'gatsby-image'
-import styles from './carousel.module.css'
-import CarouselImages from './carouselImages'
-import ScrollContainer from 'react-indiana-drag-scroll'
-import { useMediaQuery } from 'react-responsive'
+import React from 'react';
+import { graphql, useStaticQuery, Link } from 'gatsby';
+import Img from 'gatsby-image';
+import styles from './carousel.module.css';
+import CarouselImages from './carouselImages';
+import ScrollContainer from 'react-indiana-drag-scroll';
 
 const Carousel = () => {
   const data = useStaticQuery(graphql`
     query {
-      avatar: file(relativePath: {eq: "avatar2.png"}) {
+      avatar: file(relativePath: { eq: "avatar2.png" }) {
         childImageSharp {
           fluid(maxWidth: 700) {
             ...GatsbyImageSharpFluid_withWebp_noBase64
@@ -17,59 +16,42 @@ const Carousel = () => {
         }
       }
     }
-  `)
-
-  const isMobile = useMediaQuery({query: "(max-width: 1200px)"});
+  `);
 
   return (
     <section className={styles.carousel}>
-      {isMobile ?
-      <div
-        className={styles.avatar}
-        data-sal="fade"
-        data-sal-duration="400"
-      >
-        <Img fluid={data.avatar.childImageSharp.fluid}/>
-      </div>
-      :
       <div className={styles.avatar}>
-        <Img fluid={data.avatar.childImageSharp.fluid}/>
-      </div>}
+        <Img fluid={data.avatar.childImageSharp.fluid} />
+      </div>
 
-      <p
-        className={styles.avatarText}
-        data-sal="fade"
-        data-sal-duration="400"
-      >
-        Here are some of my best works...
-      </p>
+      <p className={styles.avatarText}>Here are some of my best works...</p>
 
-      <div
-        className={styles.carouselImages}
-        data-sal="slide-left"
-        data-sal-duration="500"
-      >
-        <ScrollContainer
-          className={styles.carouselImages}
-        >
+      <div className={styles.carouselImages}>
+        <ScrollContainer vertical={false} className={styles.carouselImages}>
           <CarouselImages />
         </ScrollContainer>
       </div>
 
-      <div
-        className={styles.seeMore}
-        data-sal="fade"
-        data-sal-delay="1000"
-      >
-        <Link to="/gallery">Check out the rest</Link>
-        
-        
-        <svg xmlns="http://www.w3.org/2000/svg" width="7.266" height="14.533" viewBox="0 0 7.266 14.533">
-          <path id="Icon_ionic-md-arrow-dropright" data-name="Icon ionic-md-arrow-dropright" d="M13.5,9l7.266,7.266L13.5,23.533Z" transform="translate(-13.5 -9)" fill="#404453"/>
+      <div className={styles.seeMore}>
+        <Link to='/gallery'>Check out the rest</Link>
+
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          width='7.266'
+          height='14.533'
+          viewBox='0 0 7.266 14.533'
+        >
+          <path
+            id='Icon_ionic-md-arrow-dropright'
+            data-name='Icon ionic-md-arrow-dropright'
+            d='M13.5,9l7.266,7.266L13.5,23.533Z'
+            transform='translate(-13.5 -9)'
+            fill='#404453'
+          />
         </svg>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Carousel
+export default Carousel;

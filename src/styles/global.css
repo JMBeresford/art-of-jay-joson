@@ -21,7 +21,6 @@ html {
 }
 
 body {
-  overflow-x: hidden;
   overflow-y: auto;
   overflow-y: overlay;
 
@@ -32,15 +31,65 @@ body {
   overflow-x: hidden;
 }
 
+[data-reach-dialog-overlay] {
+  z-index: 999;
+
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+
+  transition: opacity 0.5s;
+
+  animation-name: lightbox-overlay;
+  animation-duration: 0.5s;
+}
+
+[data-reach-dialog-overlay].close {
+  opacity: 0;
+}
+
+@keyframes lightbox-overlay {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+[data-reach-dialog-content] {
+  max-height: 80%;
+  max-width: 90%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+
+  animation-name: lightbox;
+  animation-duration: 0.5s;
+}
+
+@keyframes lightbox {
+  from {
+    transform: translateY(-50px);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
 @media (min-width: 1200px) {
   *::-webkit-scrollbar-track,
   *::-webkit-scrollbar-track-piece {
     background-color: transparent;
+    z-index: 1000;
   }
 
   *::-webkit-scrollbar {
     margin-right: 2px;
     width: 8px;
+    z-index: 1000;
   }
 
   *::-webkit-scrollbar-button,
@@ -51,6 +100,8 @@ body {
   *::-webkit-scrollbar-thumb {
     background-color: rgba(49, 49, 49, 0.6);
     border-radius: 10px;
+    margin: 0 2px;
+    z-index: 1000;
   }
 }
 
@@ -167,7 +218,7 @@ a:hover::before {
   }
 }
 
-@media (max-width: 1200px), (orientation: portrait) {
+@media (max-width: 1200px) and (orientation: portrait), (orientation: portrait) {
   .scrollIndicator {
     display: none;
   }

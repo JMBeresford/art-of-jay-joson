@@ -66,7 +66,6 @@
 .carouselImages {
   position: relative;
   height: 100%;
-  overflow-y: visible;
   overflow-x: scroll;
   z-index: 0;
   grid-area: 4 / 1 / 7 / 6;
@@ -79,10 +78,6 @@
 
 
 @media (max-width: 1200px) {
-  .carousel {
-    background: none;
-  }
-
   .avatar {
     align-self: end;
   }

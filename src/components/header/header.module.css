@@ -11,7 +11,7 @@
   background: linear-gradient(#d6d6e6, rgba(255,255,255,0));
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px) and (orientation: portrait) {
   .header {
     background: none;
   }

@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './galleryImages.module.css';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
-import SimpleBar from 'simplebar-react';
 import 'simplebar/src/simplebar.css';
+import mobileMenuClose from '../../svg/mobileMenuClose.svg';
+import { Dialog } from '@reach/dialog';
+import '@reach/dialog/styles.css';
 
 const GalleryImages = props => {
-  let images = null;
+  let imageData = null;
 
   const data = useStaticQuery(graphql`
     {
@@ -18,11 +20,7 @@ const GalleryImages = props => {
             id
             childImageSharp {
               fluid {
-                aspectRatio
-                sizes
-                src
-                srcSet
-                base64
+                ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
           }
@@ -35,11 +33,7 @@ const GalleryImages = props => {
             id
             childImageSharp {
               fluid {
-                aspectRatio
-                sizes
-                src
-                srcSet
-                base64
+                ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
           }
@@ -54,11 +48,7 @@ const GalleryImages = props => {
             id
             childImageSharp {
               fluid {
-                aspectRatio
-                sizes
-                src
-                srcSet
-                base64
+                ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
           }
@@ -73,11 +63,7 @@ const GalleryImages = props => {
             id
             childImageSharp {
               fluid {
-                aspectRatio
-                sizes
-                src
-                srcSet
-                base64
+                ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
           }
@@ -88,40 +74,73 @@ const GalleryImages = props => {
 
   switch (props.category) {
     case 0:
-      images = data.illustrations;
+      imageData = data.illustrations;
       break;
 
     case 1:
-      images = data.animations;
+      imageData = data.animations;
       break;
 
     case 2:
-      images = data.charDesigns;
+      imageData = data.charDesigns;
       break;
 
     case 3:
-      images = data.storyBoards;
+      imageData = data.storyBoards;
       break;
 
     default:
       break;
   }
 
+  const [image, setImage] = useState(null);
+  const [lightbox, setLightbox] = useState(false);
+
+  const handleClick = node => {
+    setImage(node.childImageSharp.fluid);
+    setLightbox(true);
+  };
+
+  const handleClose = () => {
+    var lb = document.querySelector('[data-reach-dialog-overlay]');
+    lb.classList.add('close');
+    window.setTimeout(() => {
+      setLightbox(false);
+    }, 500);
+  };
+
   return (
     <div className={styles.wrapper}>
+      {lightbox && (
+        <Dialog
+          aria-label='image lightbox'
+          className={styles.lightbox}
+          onDismiss={() => setLightbox(false)}
+        >
+          <img
+            className={styles.closeBtn}
+            src={mobileMenuClose}
+            alt='close button'
+            onClick={() => handleClose()}
+            aria-hidden='true'
+          />
+          <Img fluid={image} className={styles.lightboxImage} />
+        </Dialog>
+      )}
+
       <div className={styles.fadeAway}></div>
-      <SimpleBar autoHide={false} className={styles.scroll}>
-        <div className={styles.images}>
-          {images.edges.map(({ node }) => (
-            <Img
-              key={node.id}
-              fluid={node.childImageSharp.fluid}
-              className={styles.image}
-              loading='eager'
-            />
-          ))}
-        </div>
-      </SimpleBar>
+      <div className={styles.images}>
+        {imageData.edges.map(({ node }) => (
+          <div
+            key={node.id}
+            className={styles.image}
+            onClick={() => handleClick(node)}
+            aria-hidden='true'
+          >
+            <Img fluid={node.childImageSharp.fluid} loading='eager' />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
