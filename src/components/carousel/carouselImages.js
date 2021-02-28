@@ -13,7 +13,7 @@ const CarouselImages = () => {
           node {
             id
             childImageSharp {
-              fluid(maxWidth: 400) {
+              fluid(quality: 100, fit: CONTAIN) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
               }
             }
@@ -43,6 +43,7 @@ const CarouselImages = () => {
     <aside className={styles.carouselContent}>
       {lightbox && (
         <Dialog
+          allowPinchZoom={true}
           aria-label='image lightbox'
           className={styles.lightbox}
           onDismiss={() => handleClose()}
@@ -58,7 +59,11 @@ const CarouselImages = () => {
               alt='close button'
             />
           </div>
-          <Img fluid={image} className={styles.lightboxImage} />
+          <Img
+            fluid={image}
+            className={styles.lightboxImage}
+            imgStyle={{ objectFit: 'contain' }}
+          />
         </Dialog>
       )}
       <div className={styles.spacer1} />

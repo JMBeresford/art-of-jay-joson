@@ -57,9 +57,8 @@ body {
 }
 
 [data-reach-dialog-content] {
+  object-fit: contain;
   max-height: 80%;
-  max-width: 90%;
-  height: auto !important;
   display: flex;
   flex-direction: column;
   padding: 1rem !important;

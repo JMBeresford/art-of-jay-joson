@@ -125,7 +125,11 @@ const GalleryImages = props => {
             onClick={() => handleClose()}
             aria-hidden='true'
           />
-          <Img fluid={image} className={styles.lightboxImage} />
+          <Img
+            fluid={image}
+            className={styles.lightboxImage}
+            imgStyle={{ objectFit: 'contain' }}
+          />
         </Dialog>
       )}
 
