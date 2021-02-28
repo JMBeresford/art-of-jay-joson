@@ -41,7 +41,7 @@
   position: absolute;
   top: 100%;
   transform-origin: top;
-  font-size: 0.7em;
+  font-size: 0.8em;
   transform: scaleY(0);
 
   transition: transform 0.2s ease-in-out;
@@ -49,7 +49,7 @@
 
 .menu a {
   display: block;
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 
 .socialsMenu.open .menu {

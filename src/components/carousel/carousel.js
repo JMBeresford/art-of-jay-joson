@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styles from './carousel.module.css';
@@ -18,6 +18,14 @@ const Carousel = () => {
     }
   `);
 
+  const [scrolling, setScrolling] = useState(false);
+
+  const handleEndScroll = () => {
+    window.setTimeout(() => {
+      setScrolling(false);
+    }, 500);
+  };
+
   return (
     <section className={styles.carousel}>
       <div className={styles.avatar}>
@@ -27,8 +35,13 @@ const Carousel = () => {
       <p className={styles.avatarText}>Here are some of my best works...</p>
 
       <div className={styles.carouselImages}>
-        <ScrollContainer vertical={false} className={styles.carouselImages}>
-          <CarouselImages />
+        <ScrollContainer
+          vertical={false}
+          className={styles.carouselImages}
+          onStartScroll={() => setScrolling(true)}
+          onEndScroll={() => handleEndScroll()}
+        >
+          <CarouselImages scrolling={scrolling} />
         </ScrollContainer>
       </div>
 

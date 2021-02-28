@@ -115,7 +115,7 @@ const GalleryImages = props => {
         <Dialog
           aria-label='image lightbox'
           className={styles.lightbox}
-          onDismiss={() => setLightbox(false)}
+          onDismiss={() => handleClose()}
         >
           <img
             className={styles.closeBtn}

@@ -19,8 +19,11 @@ const Nav = props => {
   }
 
   useEffect(() => {
-    document.addEventListener('scroll', handleScroll);
-  });
+    if (window.scrollY > 50) {
+      setScrolled(true);
+    }
+    window.addEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
