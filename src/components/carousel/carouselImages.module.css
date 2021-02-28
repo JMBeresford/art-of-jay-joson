@@ -72,7 +72,6 @@
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 100%;
-  min-width: 300px;
 
   cursor: pointer;
   transform: none;

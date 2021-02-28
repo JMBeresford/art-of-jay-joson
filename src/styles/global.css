@@ -59,9 +59,10 @@ body {
 [data-reach-dialog-content] {
   max-height: 80%;
   max-width: 90%;
-  width: auto;
+  width: auto !important;
   display: flex;
   flex-direction: column;
+  padding: 1rem !important;
 
   animation-name: lightbox;
   animation-duration: 0.5s;
