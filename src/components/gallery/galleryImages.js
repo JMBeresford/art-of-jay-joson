@@ -19,7 +19,7 @@ const GalleryImages = props => {
           node {
             id
             childImageSharp {
-              fluid {
+              fluid(quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
@@ -32,7 +32,7 @@ const GalleryImages = props => {
           node {
             id
             childImageSharp {
-              fluid {
+              fluid(quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
@@ -47,7 +47,7 @@ const GalleryImages = props => {
           node {
             id
             childImageSharp {
-              fluid {
+              fluid(quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
@@ -62,7 +62,7 @@ const GalleryImages = props => {
           node {
             id
             childImageSharp {
-              fluid {
+              fluid(quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
@@ -113,6 +113,7 @@ const GalleryImages = props => {
     <div className={styles.wrapper}>
       {lightbox && (
         <Dialog
+          allowPinchZoom={true}
           aria-label='image lightbox'
           className={styles.lightbox}
           onDismiss={() => handleClose()}
