@@ -7,7 +7,7 @@
   padding: calc(10px + 4%) 0 calc(25px + 4%);
   grid-template-rows: repeat(2, 50%);
   grid-auto-flow: column;
-  grid-auto-columns: clamp(350px, 20%, 500px);
+  grid-auto-columns: clamp(200px, 20vw, 500px);
 }
 
 .spacer1 {

@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import styles from './galleryImages.module.css';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import { Video } from '../gatsby-video/src/index';
 import 'simplebar/src/simplebar.css';
 import mobileMenuClose from '../../svg/mobileMenuClose.svg';
 import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
+import { isMobile } from 'react-device-detect';
 
 const GalleryImages = props => {
   let imageData = null;
@@ -31,9 +33,35 @@ const GalleryImages = props => {
         edges {
           node {
             id
-            childImageSharp {
-              fluid(quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
+            childVideoFfmpeg {
+              webm: transcode(
+                codec: "libvpx-vp9"
+                fileExtension: "webm"
+                outputOptions: ["-crf 20", "-b:v 0"]
+                maxWidth: 10
+              ) {
+                src
+                width
+                aspectRatio
+                height
+                presentationMaxHeight
+                presentationMaxWidth
+                fileExtension
+                originalName
+              }
+              mp4: transcode(
+                maxWidth: 900
+                fileExtension: "mp4"
+                codec: "libx264"
+              ) {
+                width
+                src
+                presentationMaxWidth
+                presentationMaxHeight
+                originalName
+                height
+                fileExtension
+                aspectRatio
               }
             }
           }
@@ -94,11 +122,44 @@ const GalleryImages = props => {
   }
 
   const [image, setImage] = useState(null);
+  const [video, setVideo] = useState(null);
   const [lightbox, setLightbox] = useState(false);
 
   const handleClick = node => {
-    setImage(node.childImageSharp.fluid);
+    if (props.category === 1) {
+      setVideo(node.childVideoFfmpeg);
+    } else {
+      setImage(node.childImageSharp.fluid);
+    }
     setLightbox(true);
+  };
+
+  const handleHover = node => {
+    if (isMobile) {
+      return;
+    }
+    var el = document.getElementById(node.id);
+
+    if (el !== null) {
+      el.play();
+    }
+  };
+
+  const pause = id => {
+    var el = document.getElementById(id);
+
+    if (el !== null) {
+      el.pause();
+    }
+  };
+
+  const handleExit = node => {
+    if (isMobile) {
+      return;
+    }
+    var el = document.getElementById(node.id);
+
+    el.pause();
   };
 
   const handleClose = () => {
@@ -125,11 +186,22 @@ const GalleryImages = props => {
             onClick={() => handleClose()}
             aria-hidden='true'
           />
-          <Img
-            fluid={image}
-            className={styles.lightboxImage}
-            imgStyle={{ objectFit: 'contain' }}
-          />
+          {props.category === 1 ? (
+            <Video
+              muted
+              autoPlay
+              loop
+              controls
+              playsInline
+              sources={[video.webm, video.mp4]}
+            />
+          ) : (
+            <Img
+              fluid={image}
+              className={styles.lightboxImage}
+              imgStyle={{ objectFit: 'contain' }}
+            />
+          )}
         </Dialog>
       )}
 
@@ -142,7 +214,25 @@ const GalleryImages = props => {
             onClick={() => handleClick(node)}
             aria-hidden='true'
           >
-            <Img fluid={node.childImageSharp.fluid} loading='eager' />
+            {props.category === 1 ? (
+              <Video
+                id={node.id}
+                muted
+                autoPlay
+                onLoadedData={() => pause(node.id)}
+                loop
+                playsInline
+                onClick={() => null}
+                onMouseEnter={() => handleHover(node)}
+                onMouseLeave={() => handleExit(node)}
+                sources={[
+                  node.childVideoFfmpeg.webm,
+                  node.childVideoFfmpeg.mp4,
+                ]}
+              />
+            ) : (
+              <Img fluid={node.childImageSharp.fluid} loading='eager' />
+            )}
           </div>
         ))}
       </div>

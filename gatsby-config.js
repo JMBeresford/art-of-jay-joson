@@ -26,14 +26,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `illustrations`,
+        name: `animations`,
         path: path.join(__dirname, `src`, `animations`),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `illustrations`,
+        name: `characterDesigns`,
         path: path.join(__dirname, `src`, `characterDesigns`),
       },
     },
@@ -54,6 +54,7 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-ffmpeg`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-scroll-reveal`,
