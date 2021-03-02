@@ -1,11 +1,10 @@
 const path = require('path');
-const ffprobePath = require('@ffprobe-installer/ffprobe').path;
-const ffprobe = require('@ffprobe-installer/ffprobe');
-ffprobe.setFfprobePath(ffprobePath);
-
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 const ffmpeg = require('fluent-ffmpeg');
 ffmpeg.setFfmpegPath(ffmpegPath);
+
+const ffprobePath = require('@ffprobe-installer/ffprobe').path;
+ffmpeg.setFfprobePath(ffprobePath);
 
 module.exports = {
   plugins: [
