@@ -36,7 +36,6 @@ const Carousel = () => {
 
       <div className={styles.carouselImages}>
         <ScrollContainer
-          vertical={false}
           className={styles.carouselImages}
           onStartScroll={() => setScrolling(true)}
           onEndScroll={() => handleEndScroll()}
