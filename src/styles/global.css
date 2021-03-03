@@ -27,6 +27,32 @@ body {
   width: 100vw;
 }
 
+.successWrapper {
+  font-family: "Chantal", sans-serif;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.successWrapper h2 {
+  font-size: 3rem;
+}
+
+.successWrapper p {
+  font-size: 2rem;
+}
+
+.successWrapper a {
+  color: #798DC9;
+}
+
+.successWrapper a::before {
+  background-color: #798DC9;
+}
+
 #index {
   overflow-x: hidden;
 }
@@ -113,7 +139,7 @@ body {
 a {
   position: relative;
   text-decoration: none;
-  color: var(--text-dark);
+  color: var(--accent-light);
 }
 
 a::before {
@@ -123,7 +149,7 @@ a::before {
   height: 0.1vh;
   bottom: -2px;
   left: 0;
-  background-color: var(--dark);
+  background-color: var(--accent-light);
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;

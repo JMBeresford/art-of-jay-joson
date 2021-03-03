@@ -8,11 +8,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 8%;
-  background: linear-gradient(#d6d6e6, rgba(255,255,255,0));
+  /* background: linear-gradient(#d6d6e6, rgba(255,255,255,0)); */
+  background-color: var(--accent-darker);
 }
-
+/* 
 @media (max-width: 1200px) and (orientation: portrait) {
   .header {
     background: none;
   }
-}
+} */

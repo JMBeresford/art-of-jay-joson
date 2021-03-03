@@ -7,6 +7,7 @@ import BigTriangle from '../components/carousel/bigTriangle';
 import About from '../components/about/about';
 import favicon from '../images/icon.png';
 import Helmet from 'react-helmet';
+import Footer from '../components/footer/footer';
 
 // Home page component
 const IndexPage = () => {
@@ -78,6 +79,7 @@ const IndexPage = () => {
       <BigTriangle />
       <Carousel />
       <About />
+      <Footer />
     </main>
   );
 };

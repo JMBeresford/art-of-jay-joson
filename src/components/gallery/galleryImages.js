@@ -236,6 +236,7 @@ const GalleryImages = props => {
           </div>
         ))}
       </div>
+      <div className={styles.spacer}></div>
     </div>
   );
 };

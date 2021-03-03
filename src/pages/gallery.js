@@ -3,6 +3,7 @@ import Header from '../components/header/header';
 import GalleryContent from '../components/gallery/galleryContent';
 import favicon from '../images/icon.png';
 import Helmet from 'react-helmet';
+import Footer from '../components/footer/footer';
 
 const GalleryPage = () => {
   return (
@@ -12,6 +13,7 @@ const GalleryPage = () => {
       </Helmet>
       <Header />
       <GalleryContent />
+      <Footer />
     </main>
   );
 };

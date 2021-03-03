@@ -1,12 +1,17 @@
 .brand {
   display: flex;
   align-items: center;
-  flex-grow: 1;
+  height: 100%;
+  width: 50%;
 }
 
 .home {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 100%;
+  align-self: stretch;
   align-items: center;
+  white-space: nowrap;
 }
 
 .home::before {
@@ -14,17 +19,23 @@
 }
 
 .imgWrapper {
-  min-width: 70px;
+  display: grid;
+  height: 100%;
+  width: 13vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: end;
   margin-right: 1.5rem;
   cursor: pointer;
 }
+
 
 .brandText {
   font-family: "Nunito", sans-serif;
   font-weight: 700;
   font-size: 1.8rem;
   cursor: pointer;
-  color: var(--text-dark);
+  color: var(--accent-light);
 }
 
 @media (min-width: 2400px) {
@@ -40,7 +51,7 @@
 }
 
 @media (max-width: 500px) {
-  .imgWrapper {
+  .brandText {
     display: none;
   }
 }

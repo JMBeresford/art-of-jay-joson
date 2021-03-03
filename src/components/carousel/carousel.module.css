@@ -49,7 +49,6 @@
 .seeMore {
   position: relative;
   display: flex;
-  color: var(--text-dark);
   font-size: 1.2rem;
   grid-area: seemore;
   justify-self: end;
@@ -61,7 +60,12 @@
 }
 
 .seeMore a {
+  color: var(--text-dark);
   margin-right: 5px;
+}
+
+.seeMore a::before {
+  background-color: var(--text-dark);
 }
 
 .carouselImages {

@@ -6,11 +6,13 @@
 
   display: flex;
   width: 40%;
+  height: 13vh;
   right: 8%;
   justify-content: space-between;
+  align-items: center;
   flex-grow: 2;
   max-width: 45%;
-  color: var(--text-dark);
+  color: var(--accent-light);
   transform: none;
 
   transform-origin: right;
@@ -89,7 +91,7 @@
   z-index: 111;
   opacity: 1;
   pointer-events: all;
-  background-color: var(--dark);
+  background-color: var(--accent-darker);
   color: var(--accent-light);
   clip-path: circle(200vh at calc(84% - 29.5px) 29.5px);
 }
@@ -99,7 +101,7 @@
 }
 
 .navMobileScrolled button {
-  filter: invert(1);
+  filter: invert(0);
 }
 
 .menuBtn {
@@ -117,15 +119,15 @@
   cursor: pointer;
   outline: none;
   background-color: transparent;
-
+  
   transition: background-color ease-in-out 0.6s;
 }
 
 .menuBtn.scrolled {
-  background-color: var(--dark);
+  background-color: var(--accent-darker);
 }
 
-.menuBtn.scrolled:not(.open) img {
+.menuBtn:not(.open) img {
   filter: invert(1);
 }
 
@@ -167,13 +169,14 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px), (orientation: portrait) {
   .nav, .arrow, .arrow.scrolled {
     display: none;
   }
 
   .navMobile {
     display: flex;
+    flex-direction: column;
   }
 
   .menuBtn {

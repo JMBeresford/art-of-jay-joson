@@ -1,29 +1,44 @@
 .socialsMenu {
   position: relative;
   display: flex;
+  height: 100%;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: 0 10px;
+}
+
+.socialsMenu.open p {
+  color: var(--text-dark);
+}
+
+.arrow {
+  fill: var(--accent-light);
 }
 
 .socialsMenu.mobile .arrow {
   fill: var(--accent-light);
 }
 
+.socialsMenu.open .arrow {
+  fill: var(--text-dark);
+}
+
 .socialsMenu.mobile a {
   color: var(--accent-light);
 }
 
-.socialsMenu.mobile .menu {
-  position: static;
-}
-
 .wrapper {
   display: flex;
+  height: 100%;
   align-items: center;
   font-size: inherit;
 
   cursor: pointer;
+}
+
+.wrapper p, .arrow {
+  z-index: 75;
 }
 
 .arrow {
@@ -39,21 +54,50 @@
 
 .menu {
   position: absolute;
-  top: 100%;
-  transform-origin: top;
+  top: calc(50% - 0.5 * 1.3rem - 10px);
+  width: 100%;
   font-size: 0.8em;
-  transform: scaleY(0);
+  border-radius: 10px;
+  background-color: var(--accent-darker);
+  clip-path: inset(0 0 100% 0);
 
-  transition: transform 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.socialsMenu.scrolled:not(.mobile) .menu {
+  display: none;
+}
+
+.secret {
+  color: rgba(255, 255, 255, 0) !important;
+  cursor: unset;
+  pointer-events: none;
+}
+
+.secret::before {
+  display: none;
 }
 
 .menu a {
-  display: block;
+  display: inline-block;
   margin: 1rem 0;
 }
 
+.socialsMenu.mobile .menu a {
+  margin: 0.75rem 0;
+}
+
 .socialsMenu.open .menu {
-  transform: none;
+  background-color: var(--accent-dark);
+  clip-path: inset(0 0 0 0);
+}
+
+.socialsMenu.open .menu a:not(.secret) {
+  color: var(--text-dark);
+}
+
+.socialsMenu.open .menu a::before {
+  background-color: var(--text-dark);
 }
 
 .open .arrow {

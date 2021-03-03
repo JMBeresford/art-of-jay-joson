@@ -32,7 +32,7 @@ const ContactForm = () => {
         ...formState,
       }),
     })
-      .then(() => alert('Success!'))
+      .then()
       .catch(error => alert(error));
   };
 
@@ -40,6 +40,7 @@ const ContactForm = () => {
     <div className={styles.formWrapper}>
       <form
         id='contactForm'
+        action='/success'
         name='contact'
         method='post'
         data-netlify='true'

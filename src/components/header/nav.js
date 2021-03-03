@@ -36,7 +36,7 @@ const Nav = props => {
         <Link className={styles.navLinkDesktop} to='/contact'>
           Contact Me
         </Link>
-        <Socials className={styles.navLinkDesktop} />
+        <Socials scrolled={scrolled} className={styles.navLinkDesktop} />
       </nav>
 
       <a
@@ -80,12 +80,12 @@ const Nav = props => {
         <Link className={styles.navLink} to='/gallery'>
           Gallery
         </Link>
-        <Link className={styles.navLink} to='/contact'>
-          Contact Me
-        </Link>
         <div className={styles.navLink}>
           <Socials mobile={true} />
         </div>
+        <Link className={styles.navLink} to='/contact'>
+          Contact Me
+        </Link>
       </nav>
     </>
   );
