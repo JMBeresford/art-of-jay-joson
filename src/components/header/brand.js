@@ -9,8 +9,8 @@ const Brand = () => {
     query MyQuery {
       file(relativePath: { eq: "icon.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -20,7 +20,7 @@ const Brand = () => {
     <div className={styles.brand}>
       <Link className={styles.home} to='/'>
         <div className={styles.imgWrapper}>
-          <Img fluid={data.file.childImageSharp.fluid} alt='Brand Icon' />
+          <Img fluid={data.file.childImageSharp.fluid} alt='logo' />
         </div>
         <h3 className={styles.brandText}>Art of Jay Joson</h3>
       </Link>
