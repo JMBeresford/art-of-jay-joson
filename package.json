@@ -50,6 +50,7 @@
     "react-draggable": "^4.4.3",
     "react-helmet": "^6.1.0",
     "react-indiana-drag-scroll": "^1.8.0",
+    "react-netlify-identity": "^0.1.9",
     "react-netlify-identity-widget": "^0.2.7",
     "react-responsive": "^8.2.0",
     "react-smooth-scrollbar": "^8.0.6",

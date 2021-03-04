@@ -29,6 +29,10 @@ const IndexPage = () => {
     <main id={`index`}>
       <Helmet>
         <link rel='icon' href={favicon} />
+        <script
+          type='text/javascript'
+          src='https://identity.netlify.com/v1/netlify-identity-widget.js'
+        />
       </Helmet>
       <div className={scrolled ? 'scrollIndicator hide' : 'scrollIndicator'}>
         <svg
@@ -74,8 +78,10 @@ const IndexPage = () => {
           />
         </svg>
       </div>
+      <div data-netlify-identity-menu />
       <Header scrollable={true} />
       <Hero />
+      <div data-netlify-identity-button>Login with Netlify Identity</div>
       <BigTriangle />
       <Carousel />
       <About />
