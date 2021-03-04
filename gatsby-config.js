@@ -19,35 +19,41 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `favorites`,
-        path: path.join(__dirname, `src`, `favorites`),
+        path: path.join(__dirname, `src`, `images`, `uploads`, `favorites`),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `illustrations`,
-        path: path.join(__dirname, `src`, `illustrations`),
+        path: path.join(__dirname, `src`, `images`, `uploads`, `illustrations`),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `animations`,
-        path: path.join(__dirname, `src`, `animations`),
+        path: path.join(__dirname, `src`, `images`, `uploads`, `animations`),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `characterDesigns`,
-        path: path.join(__dirname, `src`, `characterDesigns`),
+        path: path.join(
+          __dirname,
+          `src`,
+          `images`,
+          `uploads`,
+          `characterDesigns`
+        ),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `illustrations`,
-        path: path.join(__dirname, `src`, `storyBoards`),
+        path: path.join(__dirname, `src`, `images`, `uploads`, `storyBoards`),
       },
     },
     {
@@ -62,6 +68,12 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-ffmpeg`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        enableIdentityWidget: false,
+      },
+    },
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {

@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+
+media_folder: /src/images/uploads
+public_folder: /uploads
+
+collections:
+  - name: "images"
+    label: 'Images'
+    folder: '/src/images/uploads/{{category}}'
+    create: true
+    media_folder: ''
+    fields:
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        multiple: true
+        min: 1
+        default: ["illustrations"]
+        options: ["illustrations", "characterDesigns", "storyBoards", "favorites"]
+      - label: "Add Image"
+        name: "image"
+        widget: "file"
