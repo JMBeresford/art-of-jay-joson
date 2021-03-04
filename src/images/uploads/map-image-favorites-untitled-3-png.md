@@ -1,3 +1,3 @@
 ---
-image: favorites/untitled-3.png
+image: favorites/snow_mountains.jpg
 ---
