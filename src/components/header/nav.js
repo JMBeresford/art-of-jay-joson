@@ -4,9 +4,11 @@ import { Link } from 'gatsby';
 import mobileMenuSvg from '../../svg/mobileMenu.svg';
 import mobileMenuClose from '../../svg/mobileMenuClose.svg';
 import Socials from './socials';
+import IdentityModal from 'react-net';
 
 const Nav = props => {
   const [open, setOpen] = useState(false);
+  const [dialog, setDialog] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   function handleScroll(e) {
@@ -87,6 +89,10 @@ const Nav = props => {
           Contact Me
         </Link>
       </nav>
+      <IdentityModal
+        showDialog={dialog}
+        onCloseDialog={() => setDialog(false)}
+      />
     </>
   );
 };

@@ -75,6 +75,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-netlify-identity`,
+      options: {
+        url: `https://artofjayjoson.netlify.app/`, // required!
+      },
+    },
+    {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
         threshold: 0.2, // Percentage of an element's area that needs to be visible to launch animation

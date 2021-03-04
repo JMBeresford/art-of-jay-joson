@@ -8,7 +8,6 @@ import About from '../components/about/about';
 import favicon from '../images/icon.png';
 import Helmet from 'react-helmet';
 import Footer from '../components/footer/footer';
-import netlifyIdentity from 'netlify-identity-widget';
 
 // Home page component
 const IndexPage = () => {
@@ -24,7 +23,6 @@ const IndexPage = () => {
 
   useEffect(() => {
     document.addEventListener('scroll', handleScroll);
-    netlifyIdentity.init();
   });
 
   return (
