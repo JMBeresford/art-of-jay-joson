@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import mobileMenuSvg from '../../svg/mobileMenu.svg';
 import mobileMenuClose from '../../svg/mobileMenuClose.svg';
 import Socials from './socials';
-import IdentityModal from 'react-net';
+import IdentityModal from 'react-netlify-identity-widget';
 
 const Nav = props => {
   const [open, setOpen] = useState(false);
