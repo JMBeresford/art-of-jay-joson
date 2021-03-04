@@ -81,7 +81,6 @@ const IndexPage = () => {
       <div data-netlify-identity-menu />
       <Header scrollable={true} />
       <Hero />
-      <div data-netlify-identity-button>Login with Netlify Identity</div>
       <BigTriangle />
       <Carousel />
       <About />
