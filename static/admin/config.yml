@@ -3,22 +3,51 @@ backend:
   branch: main
 
 media_folder: /src/images/uploads
-public_folder: /uploads
 
 collections:
-  - name: "images"
-    label: 'Images'
-    folder: '/src/images/uploads/{{category}}'
+  - name: "Favorites"
+    label: 'Favorites'
+    folder: '/src/images/uploads/'
     create: true
-    media_folder: ''
+    media_folder: 'favorites'
     fields:
-      - label: "Category"
-        name: "category"
-        widget: "select"
-        multiple: true
-        min: 1
-        default: ["illustrations"]
-        options: ["illustrations", "characterDesigns", "storyBoards", "favorites"]
-      - label: "Add Image"
+      - label: "Manage Images"
+        name: "image"
+        widget: "image"
+        media_folder: '/src/images/uploads/favorites'
+  - name: "Illustrations"
+    label: 'Illustrations'
+    folder: '/src/images/uploads/'
+    create: true
+    media_folder: 'illustrations'
+    fields:
+      - label: "Add Image(s)"
+        name: "image"
+        widget: "file"
+  - name: "Animations"
+    label: 'Animations'
+    folder: '/src/images/uploads/'
+    create: true
+    media_folder: 'animations'
+    fields:
+      - label: "Add Video(s)"
+        name: "video"
+        widget: "file"
+  - name: "CharacterDesigns"
+    label: 'Character Designs'
+    folder: '/src/images/uploads/'
+    create: true
+    media_folder: 'characterDesigns'
+    fields:
+      - label: "Add Image(s)"
+        name: "image"
+        widget: "file"
+  - name: "StoryBoards"
+    label: 'Story Boards'
+    folder: '/src/images/uploads/'
+    create: true
+    media_folder: 'storyBoards'
+    fields:
+      - label: "Add Image(s)"
         name: "image"
         widget: "file"
