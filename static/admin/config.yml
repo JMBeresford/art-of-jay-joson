@@ -7,7 +7,7 @@ media_folder: /src/images/uploads
 collections:
   - name: "Favorites"
     label: 'Favorites'
-    folder: '/src/images/uploads/'
+    folder: '/static/uploads/'
     create: true
     media_folder: 'favorites'
     fields:
@@ -17,7 +17,7 @@ collections:
         media_folder: '/src/images/uploads/favorites'
   - name: "Illustrations"
     label: 'Illustrations'
-    folder: '/src/images/uploads/'
+    folder: '/static/uploads/'
     create: true
     media_folder: 'illustrations'
     fields:
@@ -27,7 +27,7 @@ collections:
         media_folder: '/src/images/uploads/illustrations'
   - name: "Animations"
     label: 'Animations'
-    folder: '/src/images/uploads/'
+    folder: '/static/uploads/'
     create: true
     media_folder: 'animations'
     fields:
@@ -37,19 +37,21 @@ collections:
         media_folder: '/src/images/uploads/animations'
   - name: "CharacterDesigns"
     label: 'Character Designs'
-    folder: '/src/images/uploads/'
+    folder: '/static/uploads/'
     create: true
     media_folder: 'characterDesigns'
     fields:
       - label: "Add Image(s)"
         name: "image"
-        widget: "file"
+        widget: "image"
+        media_folder: '/src/images/uploads/characterDesigns'
   - name: "StoryBoards"
     label: 'Story Boards'
-    folder: '/src/images/uploads/'
+    folder: '/static/uploads/'
     create: true
     media_folder: 'storyBoards'
     fields:
       - label: "Add Image(s)"
         name: "image"
-        widget: "file"
+        widget: "image"
+        media_folder: '/src/images/uploads/storyBoards'
