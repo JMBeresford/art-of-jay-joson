@@ -29,12 +29,11 @@ collections:
     label: 'Animations'
     folder: '/static/uploads/'
     create: true
-    media_folder: 'animations'
+    media_folder: '/src/images/uploads/animations'
     fields:
       - label: "Add Video(s)"
         name: "video"
         widget: "file"
-        media_folder: '/src/images/uploads/animations'
   - name: "CharacterDesigns"
     label: 'Character Designs'
     folder: '/static/uploads/'
