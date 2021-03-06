@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: /src/images/uploads
+media_folder: /static/uploads
 
 collections:
   - name: "Favorites"
@@ -14,6 +14,7 @@ collections:
       - label: "Manage Images"
         name: "image"
         widget: "image"
+        media_folder: '/static/uploads/favorites'
   - name: "Illustrations"
     label: 'Illustrations'
     folder: '/static/uploads/'
@@ -23,15 +24,17 @@ collections:
       - label: "Add Image(s)"
         name: "image"
         widget: "image"
+        media_folder: '/static/uploads/illustrations'
   - name: "Animations"
     label: 'Animations'
     folder: '/static/uploads/'
     create: true
-    media_folder: '/src/images/uploads/animations'
+    media_folder: 'animations'
     fields:
       - label: "Add Video(s)"
         name: "video"
         widget: "file"
+        media_folder: '/static/uploads/animations'
   - name: "CharacterDesigns"
     label: 'Character Designs'
     folder: '/static/uploads/'
@@ -41,6 +44,7 @@ collections:
       - label: "Add Image(s)"
         name: "image"
         widget: "image"
+        media_folder: '/static/uploads/characterDesigns'
   - name: "StoryBoards"
     label: 'Story Boards'
     folder: '/static/uploads/'
@@ -50,3 +54,4 @@ collections:
       - label: "Add Image(s)"
         name: "image"
         widget: "image"
+        media_folder: '/static/uploads/storyBoards'
