@@ -19,41 +19,35 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `favorites`,
-        path: path.join(__dirname, `src`, `images`, `uploads`, `favorites`),
+        path: path.join(__dirname, `static`, `uploads`, `favorites`),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `illustrations`,
-        path: path.join(__dirname, `src`, `images`, `uploads`, `illustrations`),
+        path: path.join(__dirname, `static`, `uploads`, `illustrations`),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `animations`,
-        path: path.join(__dirname, `src`, `images`, `uploads`, `animations`),
+        path: path.join(__dirname, `static`, `uploads`, `animations`),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `characterDesigns`,
-        path: path.join(
-          __dirname,
-          `src`,
-          `images`,
-          `uploads`,
-          `characterDesigns`
-        ),
+        path: path.join(__dirname, `static`, `uploads`, `characterDesigns`),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `illustrations`,
-        path: path.join(__dirname, `src`, `images`, `uploads`, `storyBoards`),
+        path: path.join(__dirname, `static`, `uploads`, `storyBoards`),
       },
     },
     {

@@ -14,7 +14,6 @@ collections:
       - label: "Manage Images"
         name: "image"
         widget: "image"
-        media_folder: '/src/images/uploads/favorites'
   - name: "Illustrations"
     label: 'Illustrations'
     folder: '/static/uploads/'
@@ -24,7 +23,6 @@ collections:
       - label: "Add Image(s)"
         name: "image"
         widget: "image"
-        media_folder: '/src/images/uploads/illustrations'
   - name: "Animations"
     label: 'Animations'
     folder: '/static/uploads/'
@@ -43,7 +41,6 @@ collections:
       - label: "Add Image(s)"
         name: "image"
         widget: "image"
-        media_folder: '/src/images/uploads/characterDesigns'
   - name: "StoryBoards"
     label: 'Story Boards'
     folder: '/static/uploads/'
@@ -53,4 +50,3 @@ collections:
       - label: "Add Image(s)"
         name: "image"
         widget: "image"
-        media_folder: '/src/images/uploads/storyBoards'
