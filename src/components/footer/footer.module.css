@@ -1,27 +1,48 @@
 .footer {
   width: 100%;
+  position: relative;
+  height: auto;
   background-color: var(--text-dark);
   color: var(--accent-light);
-  padding: 3rem;
+  padding: 3rem 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.icon {
-  width: 50%;
-  align-self: start;
-  justify-self: center;
+.tm {
+  color: inherit;
+  font-weight: regular;
+  margin: 2rem 0;
+  font-size: 0.8rem;
+  color: #88888d;
 }
 
 .footer li {
   display: block;
 }
 
+.icon {
+  width: clamp(75px, 75%, 150px);
+  margin: 0 auto;
+}
+
 .list {
   font-size: 1rem;
   font-weight: bold;
   width: 100%;
+  height: auto;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  justify-content: center;
+  gap: 15px
+}
+
+.imgWrapper {
+  width: 100%;
+  height: 100%;
+  place-self: center;
 }
 
 .list > li {
@@ -34,6 +55,10 @@
 
 .footer a::before, .footer a::after {
   display: none;
+}
+
+.pSpacer {
+  color: rgba(255, 255, 255, 0);
 }
 
 .subList {
@@ -60,12 +85,18 @@
   margin-bottom: 0.25rem;
 }
 
+@media (max-width: 1200px) {
+  .imgWrapper {
+    order: 4;
+  }
+}
+
 @media (max-width: 1000px) and (orientation: portrait) {
   .subList > li {
     margin-bottom: 1rem;
   }
 
-  .icon {
+  .imgWrapper {
     order: 4;
   }
 }

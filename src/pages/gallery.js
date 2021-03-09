@@ -11,7 +11,7 @@ const GalleryPage = () => {
       <Helmet>
         <link rel='icon' href={favicon} />
       </Helmet>
-      <Header />
+      <Header scrollable={false} />
       <GalleryContent />
       <Footer />
     </main>

@@ -27,11 +27,13 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <ul className={styles.list}>
-        <Img
-          className={styles.icon}
-          imgStyle={{ objectFit: 'contain' }}
-          fluid={data.file.childImageSharp.fluid}
-        />
+        <li className={styles.imgWrapper}>
+          <Img
+            className={styles.icon}
+            imgStyle={{ objectFit: 'contain' }}
+            fluid={data.file.childImageSharp.fluid}
+          />
+        </li>
         <li>
           Navigation
           <ul className={styles.subList}>
@@ -74,9 +76,18 @@ const Footer = () => {
             <li>
               <Link to='/admin'>Login</Link>
             </li>
+            <li>
+              <p className={styles.pSpacer}>spacer</p>
+            </li>
+            <li>
+              <p className={styles.pSpacer}>spacer</p>
+            </li>
           </ul>
         </li>
       </ul>
+      <p className={styles.tm}>
+        A <a href='http://beresforddesign.net'>Beresford Design</a>™
+      </p>
     </footer>
   );
 };

@@ -21,9 +21,6 @@ const Nav = props => {
   }
 
   useEffect(() => {
-    if (window.scrollY > 50) {
-      setScrolled(true);
-    }
     window.addEventListener('scroll', handleScroll);
 
     return () => window.removeEventListener('scroll', handleScroll);
@@ -31,7 +28,13 @@ const Nav = props => {
 
   return (
     <>
-      <nav className={styles.nav + (scrolled ? ' ' + styles.navscrolled : '')}>
+      <nav
+        className={
+          styles.nav +
+          (scrolled ? ' ' + styles.navscrolled : '') +
+          (props.scrollable ? '' : ' ' + styles.unFix)
+        }
+      >
         <Link className={styles.navLinkDesktop} to='/gallery'>
           Gallery
         </Link>

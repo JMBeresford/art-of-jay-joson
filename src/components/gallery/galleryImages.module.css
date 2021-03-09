@@ -48,8 +48,8 @@
 }
 
 .image {
-  -webkit-box-shadow: 0px 10px 10px 2px #666666;
-  box-shadow: 0px 10px 10px 2px #666666;
+  -webkit-box-shadow: 0px 10px 10px 2px #BBBBBB;
+  box-shadow: 0px 10px 10px 2px #BBBBBB;
 
   display: grid;
   grid-template-columns: 100%;
