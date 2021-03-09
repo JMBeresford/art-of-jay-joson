@@ -27,7 +27,7 @@ const IndexPage = () => {
 
   return (
     <main id={`index`}>
-      <Helmet>
+      <Helmet title='Art of Jay Joson'>
         <link rel='icon' href={favicon} />
         <script
           type='text/javascript'

@@ -1,3 +1,4 @@
+import { navigate } from 'gatsby-link';
 import React, { useState } from 'react';
 import styles from './contactForm.module.css';
 
@@ -32,7 +33,7 @@ const ContactForm = () => {
         ...formState,
       }),
     })
-      .then()
+      .then(navigate('/success'))
       .catch(error => alert(error));
   };
 

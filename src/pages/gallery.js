@@ -8,7 +8,7 @@ import Footer from '../components/footer/footer';
 const GalleryPage = () => {
   return (
     <main>
-      <Helmet>
+      <Helmet title='Art of Jay Joson'>
         <link rel='icon' href={favicon} />
       </Helmet>
       <Header scrollable={false} />

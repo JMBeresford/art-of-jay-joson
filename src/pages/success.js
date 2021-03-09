@@ -9,7 +9,7 @@ const SuccessPage = () => {
   return (
     <>
       <main style={{ height: '100vh' }}>
-        <Helmet>
+        <Helmet title='Art of Jay Joson'>
           <link rel='icon' href={favicon} />
         </Helmet>
         <Header />
