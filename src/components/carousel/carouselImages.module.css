@@ -99,12 +99,16 @@
     grid-column: span 3;
   }
 
+  .spacer1 {
+    display: none;
+  }
+
   .spacer2 {
     display: block;
   }
 
   .carouselContent::before {
-    display: none;
+    grid-column: 1 / 2;
   }
   
   .carouselContent::after {
