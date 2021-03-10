@@ -35,7 +35,7 @@
 .text {
   background-color: #E3E3E3;
   align-self: center;
-  font-family: "Proxima Nova", sans-serif;
+  font-family: "Nunito", sans-serif;
   color: var(--text-dark);
   padding: 8%;
   height: auto;
