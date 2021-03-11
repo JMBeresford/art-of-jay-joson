@@ -89,6 +89,7 @@ const GalleryImages = props => {
         edges {
           node {
             id
+            name
             childImageSharp {
               fluid(quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
@@ -142,21 +143,26 @@ const GalleryImages = props => {
   switch (props.category) {
     case 0:
       imageData = data.illustrations;
+      imageData.edges.sort((a, b) => (a.node.name > b.node.name ? 1 : -1));
       break;
 
     case 1:
       imageData = data.animations;
+      imageData.edges.sort((a, b) => (a.node.name > b.node.name ? 1 : -1));
       break;
 
     case 2:
       imageData = data.charDesigns;
+      imageData.edges.sort((a, b) => (a.node.name > b.node.name ? 1 : -1));
       break;
 
     case 3:
       imageData = data.storyBoards;
+      imageData.edges.sort((a, b) => (a.node.name > b.node.name ? 1 : -1));
       break;
     case 4:
       imageData = data.reels;
+      imageData.edges.sort((a, b) => (a.node.name > b.node.name ? 1 : -1));
       break;
 
     default:
