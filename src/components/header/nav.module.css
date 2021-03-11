@@ -49,7 +49,7 @@
   display: none;
 }
 
-.arrow.scrolled {
+.nav:not(.unFix) .arrow.scrolled {
   display: flex;
   opacity: 1;
   z-index: 110;
