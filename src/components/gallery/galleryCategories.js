@@ -43,7 +43,7 @@ const GalleryCategories = props => {
           <button
             href='#'
             onClick={() => props.changeCategory(4)}
-            className={props.category === 3 ? '' : styles.inactive}
+            className={props.category === 4 ? '' : styles.inactive}
           >
             Reels
           </button>

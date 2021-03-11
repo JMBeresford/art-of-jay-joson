@@ -155,6 +155,9 @@ const GalleryImages = props => {
     case 3:
       imageData = data.storyBoards;
       break;
+    case 4:
+      imageData = data.reels;
+      break;
 
     default:
       break;
@@ -165,7 +168,7 @@ const GalleryImages = props => {
   const [lightbox, setLightbox] = useState(false);
 
   const handleClick = node => {
-    if (props.category === 1) {
+    if (props.category === 1 || props.category === 4) {
       setVideo(node.childVideoFfmpeg);
     } else {
       setImage(node.childImageSharp.fluid);
@@ -225,7 +228,7 @@ const GalleryImages = props => {
             onClick={() => handleClose()}
             aria-hidden='true'
           />
-          {props.category === 1 ? (
+          {props.category === 1 || props.category === 4 ? (
             <Video
               muted
               autoPlay
@@ -253,7 +256,7 @@ const GalleryImages = props => {
             onClick={() => handleClick(node)}
             aria-hidden='true'
           >
-            {props.category === 1 ? (
+            {props.category === 1 || props.category === 4 ? (
               <Video
                 id={node.id}
                 muted
