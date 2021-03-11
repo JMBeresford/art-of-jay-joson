@@ -39,6 +39,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `reels`,
+        path: path.join(__dirname, `static`, `uploads`, `reels`),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `characterDesigns`,
         path: path.join(__dirname, `static`, `uploads`, `characterDesigns`),
       },

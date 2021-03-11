@@ -35,6 +35,16 @@ collections:
         name: "video"
         widget: "file"
         media_folder: '/static/uploads/animations'
+  - name: "reels"
+    label: 'Reels'
+    folder: '/static/uploads/'
+    create: true
+    media_folder: 'reels'
+    fields:
+      - label: "Add Video(s)"
+        name: "video"
+        widget: "file"
+        media_folder: '/static/uploads/reels'
   - name: "CharacterDesigns"
     label: 'Character Designs'
     folder: '/static/uploads/'

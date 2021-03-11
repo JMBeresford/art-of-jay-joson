@@ -40,6 +40,13 @@ const GalleryCategories = props => {
           >
             Story Boards
           </button>
+          <button
+            href='#'
+            onClick={() => props.changeCategory(4)}
+            className={props.category === 3 ? '' : styles.inactive}
+          >
+            Reels
+          </button>
         </div>
       </nav>
     </div>

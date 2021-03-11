@@ -97,6 +97,45 @@ const GalleryImages = props => {
           }
         }
       }
+
+      reels: allFile(filter: { absolutePath: { regex: "/reels/" } }) {
+        edges {
+          node {
+            id
+            childVideoFfmpeg {
+              webm: transcode(
+                codec: "libvpx-vp9"
+                fileExtension: "webm"
+                outputOptions: ["-crf 20", "-b:v 0"]
+                maxWidth: 10
+              ) {
+                src
+                width
+                aspectRatio
+                height
+                presentationMaxHeight
+                presentationMaxWidth
+                fileExtension
+                originalName
+              }
+              mp4: transcode(
+                maxWidth: 900
+                fileExtension: "mp4"
+                codec: "libx264"
+              ) {
+                width
+                src
+                presentationMaxWidth
+                presentationMaxHeight
+                originalName
+                height
+                fileExtension
+                aspectRatio
+              }
+            }
+          }
+        }
+      }
     }
   `);
 
