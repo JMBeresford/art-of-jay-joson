@@ -53,7 +53,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `illustrations`,
+        name: `storyBoards`,
         path: path.join(__dirname, `static`, `uploads`, `storyBoards`),
       },
     },
